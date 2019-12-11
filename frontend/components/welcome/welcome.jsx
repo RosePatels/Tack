@@ -1,23 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import NavBar from '../landing_page/navbar';
 
 const Welcome = ({ currentUser, logout }) => {
-    const sessionLinks = () => (
-        <nav>
-            <Link to="/login">Login</Link>
-            <span>or</span>
-            <Link to="/signup">Sign up!</Link>
-        </nav>
-    );  
-
-    const loggedInWelcome = () => (
-        <nav>
-            <h2>Hi, {currentUser.email}</h2>
-            <button onClick={logout}>Log Out</button>
-        </nav>
+    return (
+        <NavBar />
     );
-
-        return currentUser ? loggedInWelcome() : sessionLinks();
-};
-
+}
 export default Welcome;

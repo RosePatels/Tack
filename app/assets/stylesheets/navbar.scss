@@ -1,0 +1,46 @@
+.navbar{
+    padding: 10px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(231, 230, 230);
+}
+
+
+.fa-thumbtack {
+    color: rgb(22, 22, 22);
+    font-size: 20px;
+    padding: 10px;
+}
+
+.logo{
+    font-weight: 900;
+    font-size: 30px;
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+}
+
+.navbar-links{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links li{
+    margin: 0 10px;
+}
+
+.signin-button{
+    border: 2px solid gray;
+    padding: 7px 12px;
+    color: gray;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.signup-button{
+    background: #611f69;
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 4px;
+}
