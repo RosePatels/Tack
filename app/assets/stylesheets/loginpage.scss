@@ -1,0 +1,31 @@
+.login-page{
+    background: #F8F8F8;
+  
+}
+
+.login-form-location{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-header{
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 30px 100px 70px 100px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgb(231, 230, 230);
+}
+
+.login-form p{
+    padding-bottom: 10px;
+}
