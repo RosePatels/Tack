@@ -27,7 +27,11 @@ class SessionForm extends React.Component {
 
     handleDemoUser(){
         let demoUser = {email: 'demo@demo.com', password: '123456'};
-        this.props.processForm(demoUser);
+        if (this.props.formType === 'Sign In'){
+            this.props.processForm(demoUser);
+        } else {
+            this.props.demoLogin(demoUser);
+        }
     }
 
     renderErrors(){
