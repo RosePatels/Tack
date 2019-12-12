@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+    <script id="bootstrap-current-user" type="text/javascript">
+      window.currentUser = <%= render("api/users/user.json.jbuilder",
+        user: current_user).html_safe %>
+    </script>
+  <% end %>
     <%= yield %>
     <script src="https://kit.fontawesome.com/6ac01a17e9.js" crossorigin="anonymous"></script>
   </body>

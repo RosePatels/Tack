@@ -30,9 +30,10 @@ export const login = user => dispatch => {
         err => (dispatch(receiveErrors(err.responseJSON))))
 };
 
-export const logout = () => dispatch => (
-    APIUtil.logout().then(user => (dispatch(logoutCurrentUser())))
-);
+export const logout = () => dispatch => {
+    debugger;
+    return APIUtil.logout().then(user => (dispatch(logoutCurrentUser())))
+};
 
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(user => (dispatch(receiveCurrentUser(user))),

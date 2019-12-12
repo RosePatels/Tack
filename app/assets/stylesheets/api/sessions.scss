@@ -43,9 +43,10 @@
     color: black;
     font-size: 14px;
     width: 100%;
-
+    cursor: pointer;
 }
 
-.demo-user{
-    background: white;
+.try-demo:hover{
+    color: #912f9c;
+    transition: .2s;
 }
