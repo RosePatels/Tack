@@ -1,6 +1,6 @@
 class Channel < ApplicationRecord
     validates :author_id, :description, :private, :title, presence: true
-    validates :private, { in: [true, false ]}
+    validates :private, inclusion: { in: [true, false] }
 
     belongs_to :author,
         primary_key: :id,
