@@ -10,10 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     console.log(logout);
-    debugger;
   return  {
     logout: () => {
-        debugger;
         dispatch(logout())
     }
 }};

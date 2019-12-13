@@ -31,4 +31,18 @@ class User < ApplicationRecord
     def ensure_session_token
         self.session_token ||= SecureRandom.urlsafe_base64(16)
     end
+
+    has_many :authored_channels,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: 'Channel'
+
+    has_many :channel_memberships,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: 'ChannelMembership'
+    
+    has_many :channels,
+        through: :channel_memberships,
+        source: :channel
 end

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 const Client = ({currentUser, logout}) => {
-    debugger;
     return (<div className="login-page">
         <nav className="navbar">
             <Link className="logo" to="/"><i className="fas fa-thumbtack"></i>tack</Link>
