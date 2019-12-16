@@ -6,7 +6,7 @@ import Main from '../main/main';
 
 const Client = () => {
     return (
-        <div>
+        <div className="client-layout">
             <SidebarContainer />
             <Main />
         </div>

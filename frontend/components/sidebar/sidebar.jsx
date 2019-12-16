@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
     render() {
         const {logout} = this.props
         return (
-            <div>
+            <div className="sidebar-container">
                 <button className="signup-button" onClick={logout}>Logout</button>
                 <Modal />
             </div>

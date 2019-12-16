@@ -12,7 +12,7 @@ class Channel < ApplicationRecord
         foreign_key: :channel_id,
         class_name: 'ChannelMembership'
     
-    has_many :users,
+    has_many :members,
         through: :channel_memberships,
         source: :user
 end
