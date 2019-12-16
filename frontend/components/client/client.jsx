@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import SidebarContainer from '../sidebar/sidebar_container';
+import Main from '../main/main';
 
-const Client = ({currentUser, logout}) => {
-    return (<button className="signup-button" onClick={logout}>Logout</button>
+
+const Client = () => {
+    return (
+        <div>
+            <SidebarContainer />
+            <Main />
+        </div>
         );
 };
 

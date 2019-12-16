@@ -1,40 +1,38 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
-    constructor(props){
+class ChannelForm extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            avatar_url: '',
-            email: '',
-            password: ''
+            title: '',
+            description: '',
+            private: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemoUser = this.handleDemoUser.bind(this);
+        this.checkedOff = this.checkedOff.bind(this);
     }
 
-    update(field){
+    update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         })
     }
 
+    checkedOff(event){
+        this.setState({
+            private: event.currentTarget.checked
+        })
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        const user = { author_id: this.props.user_id }
+        const channel = Object.assign({}, this.state, user);
+        console.log(channel);
+        this.props.processForm(channel);
     }
 
-    handleDemoUser(){
-        let demoUser = {email: 'demo@demo.com', password: '123456'};
-        if (this.props.formType === 'Sign In'){
-            this.props.processForm(demoUser);
-        } else {
-            this.props.demoLogin(demoUser);
-        }
-    }
-
-    renderErrors(){
+    renderErrors() {
         return (
             <ul className="errors-list">
                 {this.props.errors.map((error, i) => {
@@ -44,7 +42,7 @@ class SessionForm extends React.Component {
         );
     }
 
-    additionalInputs(){
+    additionalInputs() {
         let inputs = (
             <>
                 <p>Enter your <strong>name</strong>, <strong>avatar url</strong>, <strong>email</strong> and <strong>password</strong></p>
@@ -64,19 +62,22 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div>
-                
-                <div className="errors-form">{this.renderErrors()}</div>
-                <form onSubmit={this.handleSubmit} className="session-form">                
-                    {this.additionalInputs()}
-                    <input placeholder="you@example.com" type="text" value={this.state.email} onChange={this.update('email')} />
-                    <input placeholder="password" type="password" value={this.state.password} onChange={this.update('password')} />
+                {/* <div className="errors-form">{this.renderErrors()}</div> */}
+                {/* {this.props.otherForm} */}
+                <button onClick={this.props.closeModal}>X</button>
+                <form onSubmit={this.handleSubmit} className="session-form">
+                    <label>Title:</label>
+                    <input placeholder="title" type="text" value={this.state.title} onChange={this.update('title')} />
+                    <label>Description:</label>
+                    <textarea value={this.state.description} onChange={this.update('description')}></textarea>
+                    <label>Private:</label>
+                    <input type="checkbox" value={this.state.private} onChange={this.checkedOff} />
                     <input className="session-form-submit" type="submit" value={this.props.formType} />
                 </form>
-                <div className='try-demo-align'><a className="try-demo" onClick={this.handleDemoUser}>Try out Tack as a Demo User</a></div>
             </div>
         );
     }
 
 }
 
-export default SessionForm;
+export default ChannelForm;
