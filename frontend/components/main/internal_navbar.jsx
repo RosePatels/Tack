@@ -6,7 +6,7 @@ class InternalNavbar extends React.Component {
         return (
             <div className="main-container">
                     <nav className="navbar">
-                        <Link className="logo" to="/"><i className="fas fa-thumbtack"></i>tack, the internal navbar</Link>
+                        <Link to="/">internal navbar</Link>
                     </nav>
             </div>
         );

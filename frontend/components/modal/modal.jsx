@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CreateChannelFormContainer from '../channel_form/create_channel_form_container';
 
 function Modal({modal, closeModal}){
-    let addChannel = <button onClick={() => dispatch(openModal('Create Channel'))}>Add a New Channel</button>;
+    let addChannel = <button className="add-channel-button" onClick={() => dispatch(openModal('Create Channel'))}><i class="fas fa-plus plus-icon"></i>Add a channel</button>;
 
     if(!modal){
         return addChannel;

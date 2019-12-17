@@ -4,7 +4,6 @@ export const RECEIVE_CHANNEL = "RECEIVE_CHANNEL";
 export const RECEIVE_CHANNEL_ERRORS = "RECEIVE_CHANNEL_ERRORS";
 
 const receiveChannel = ({channel, user}) => {
-    debugger;
     return {
     type: RECEIVE_CHANNEL,
     channel,
@@ -24,7 +23,6 @@ export const fetchChannel = (channelId) => dispatch => {
 
 export const createChannel = channel => dispatch => {
     return ChannelApiUtil.createChannel(channel).then(response => {
-        debugger;
         dispatch(receiveChannel(response))},
     err => dispatch(receiveErrors(err.responseJSON)));
 }

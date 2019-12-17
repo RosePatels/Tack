@@ -7,5 +7,88 @@
 
 .sidebar-container{
     background: #3F0E40;
+}
 
+.client-logo{
+    font-weight: 700;
+    font-size: 20px;
+    position: relative;
+}
+
+.tack-size{
+    font-size: 10px;
+    color: rgb(9, 207, 9);
+    padding: 0;
+    margin-right: 5px;
+}
+
+.client-logo-name{
+    color: #CCBFCC;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 5px 0;
+}
+
+.arrow-down {
+    color: #CCBFCC;
+    font-weight: 300;
+    font-size: 12px;
+    position: absolute;
+    top: 4px;
+    padding-left: 4px;
+}
+
+.client-logo-dropdown{
+    padding: 10px;
+    color: white;
+}
+
+.client-logo-dropdown:hover{
+    color: white;
+    cursor: pointer;
+    background: rgb(50, 11, 51);
+    transition: .2s;
+    .client-logo-name,
+    .arrow-down{
+        color: white;
+    }
+}
+
+.channels-container{
+    color: #CFC3CF;
+    font-size: 14px;
+    padding: 20px 10px;
+    h3{
+        font-weight: 400;
+    }
+}
+
+.channel-modal{
+    padding: 20px 0px;
+}
+
+.add-channel-button{
+    background: transparent;
+    border: none;
+    color: #CFC3CF;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    text-align: left;
+}
+
+.plus-icon {
+    font-size: 12px;
+    padding: 0 5px 0 0;
+    color: #9a859a;
+}
+
+.add-channel-button:hover{
+    .plus-icon{
+        color: white;
+    }
+    background: rgb(50, 11, 51);
+    color: white;
+    transition: .2s;
 }
