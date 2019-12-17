@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy, :show]
-    resources :channels, only: [:create, :show, :update]
+    resources :channels, only: [:create, :show, :update, :destroy] do
+      post "add_member", to: 'channels#add_member', as: 'add_member'
+      delete "remove_member", to: 'channels#remove_member', as: 'remove_member'
+    end
   end
 end
