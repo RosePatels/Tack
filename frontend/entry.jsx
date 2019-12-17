@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import { signup, login, logout } from './actions/session_actions';
-import { createChannel, fetchChannel, updateChannel } from './actions/channel_actions';
+import { createChannel, fetchChannel, updateChannel, fetchChannels } from './actions/channel_actions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+
+    window.fetchChannels = fetchChannels;
 
     ReactDOM.render(<Root store={store} />, root);
 });

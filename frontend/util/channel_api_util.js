@@ -1,3 +1,11 @@
+export const fetchChannels = () => {
+    debugger;
+    return $.ajax({
+        url: '/api/channels',
+        method: 'GET'
+    })
+}
+
 export const createChannel = channel => (
     $.ajax({
         url: '/api/channels',

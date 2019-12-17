@@ -1,12 +1,22 @@
 import React from 'react';
 import InternalNavbarContainer from './internal_navbar_container';
+import { Switch, Route } from 'react-router-dom';
+import Thread from './thread';
+import { ProtectedRoute } from '../../util/route_utils';
 
 class Main extends React.Component {
     render() {
+        
         return (
             <div className="main-container">
                 <InternalNavbarContainer />
-                <p>Main Component</p>
+                <section>
+                    <Switch>
+                        <ProtectedRoute exact path="/client/threads" component={Thread}/>
+                
+                        {/* <Route path="/client/channels/:channelId" component={ChannelDetailContainer} /> */}
+                    </Switch>
+                </section>
             </div>
         );
     }

@@ -2,6 +2,7 @@ class Api::ChannelsController < ApplicationController
 
     def index
         @channels = Channel.all
+        render "api/channels/index"
     end
 
     def create
@@ -25,11 +26,13 @@ class Api::ChannelsController < ApplicationController
 
     def show
         @channel = Channel.find(params[:id])
+        @user = @channel.author
         render "api/channels/show"
     end
 
     def update
         @channel = Channel.find(params[:id])
+        @user = @channel.author
         if @channel.update(channel_params)
             render "api/channels/show"
         else
