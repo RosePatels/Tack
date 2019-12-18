@@ -1,10 +1,6 @@
 import React from 'react';
-import CreateChannelContainer from '../channel_form/create_channel_form_container';
 import { Link } from 'react-router-dom';
-import Modal from '../modal/modal';
-import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 import ChannelIndexContainer from './channel_index_container';
-import ChannelIndex from './channel_index';
 
 
 class Sidebar extends React.Component {
@@ -61,7 +57,8 @@ class Sidebar extends React.Component {
                     <ChannelIndexContainer />
                 </div>
                 <div className="channel-modal">
-                    <Modal />
+                    {/* {<Modal />} */}
+                    {this.props.otherForm}
                 </div>
             </div>
         );

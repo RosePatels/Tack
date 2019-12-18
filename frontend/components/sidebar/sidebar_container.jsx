@@ -12,7 +12,12 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    otherForm: (
+        <button className="add-channel-button" onClick={() => {
+            dispatch(openModal('Create Channel'))
+        }}><i className="fas fa-plus plus-icon"></i>Add a channel</button>
+    )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

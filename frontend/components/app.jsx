@@ -5,10 +5,11 @@ import LoginPage from './login_page/login_page';
 import SignUpPage from './signup_page/signup_page';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import ClientContainer from './client/client_container';
-
+import Modal from './modal/modal';
 
 const App = () => (
     <div>
+        <Modal />
         <Route exact path="/" component={WelcomeContainer} />
         <AuthRoute path="/login" component={LoginPage} />
         <AuthRoute path="/signup" component={SignUpPage} />

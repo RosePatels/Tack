@@ -1,19 +1,15 @@
 import React from 'react';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import CreateChannelFormContainer from '../channel_form/create_channel_form_container';
-import UpdateChannelFormContainer from '../channel_form/update_channel_modal';
+import UpdateChannelFormContainer from '../channel_form/update_channel_form_container';
 
-function Modal({modal, closeModal}){
-    // let addChannel = <button className="add-channel-button" onClick={() => dispatch(openModal('Create Channel'))}><i className="fas fa-plus plus-icon"></i>Add a channel</button>;
-    if(!modal){
-        return null;
+function UpdateChannelModal({ modal, closeModal }) {
+    let UpdateChannel = <button className="add-channel-button" onClick={() => dispatch(openModal('Update Channel'))}><i className="fas fa-plus plus-icon"></i>Update Channel</button>;
+    if (!modal) {
+        return UpdateChannel;
     }
     let component;
-    switch(modal){
-        case 'Create Channel':
-            component = <CreateChannelFormContainer />
-            break;
+    switch (modal) {
         case 'Update Channel':
             component = <UpdateChannelFormContainer />
             break;
@@ -44,4 +40,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateChannelModal);

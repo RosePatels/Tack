@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { updateChannel } from '../../actions/channel_actions';
+import { closeModal } from '../../actions/modal_actions';
 import ChannelForm from './channel_form';
 
 const mapStateToProps = ({ errors }) => {
@@ -11,7 +12,8 @@ const mapStateToProps = ({ errors }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        processForm: (channel) => dispatch(updateChannel(channel))
+        processForm: (channel) => dispatch(updateChannel(channel)),
+        closeModal: () => dispatch(closeModal())
     };
 };
 

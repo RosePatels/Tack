@@ -31,7 +31,7 @@ class InternalNavbar extends React.Component {
             return (
                 <div className="dropdown-channel-gear">
                     <button>Invite Members</button>
-                    <button>Update Channel</button>
+                    {this.props.updateChannelForm}
                     <button>Leave Channel</button>
                     <button>Delete Channel</button>
                 </div>
