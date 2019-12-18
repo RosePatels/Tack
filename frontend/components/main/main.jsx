@@ -10,7 +10,6 @@ class Main extends React.Component {
         
         return (
             <div className="main-container">
-                <InternalNavbarContainer />
                 <section>
                     <Switch>
                         <ProtectedRoute exact path="/client/threads" component={Thread}/>

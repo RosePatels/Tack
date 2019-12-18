@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import InternalNavbar from "./internal_navbar";
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        currentUser: users[session.id]
+        currentUser: state.entities.users[state.session.id],
+        channel: ownProps.channel
     };
 };
 

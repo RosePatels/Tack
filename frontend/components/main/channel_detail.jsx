@@ -1,4 +1,5 @@
 import React from 'react';
+import InternalNavbarContainer from './internal_navbar_container';
 
 class ChannelDetail extends React.Component {
 
@@ -11,6 +12,7 @@ class ChannelDetail extends React.Component {
 
         return (
             <div>
+                <InternalNavbarContainer channel={channel}/>
                 <h2>{channel.title}</h2>
                 <p>{channel.description}</p>
             </div>

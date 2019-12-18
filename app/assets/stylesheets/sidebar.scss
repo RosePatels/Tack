@@ -57,14 +57,20 @@
 .channels-container{
     color: #CFC3CF;
     font-size: 14px;
-    padding: 20px 10px;
+    padding: 20px 0px;
     h3{
         font-weight: 400;
     }
 }
 
+.channels-header{
+    padding-left: 10px;
+    color: rgb(215, 204, 215);
+    padding-bottom: 4px;
+}
+
 .channel-modal{
-    padding: 20px 0px;
+    padding: 0px 0px 20px 0;
 }
 
 .add-channel-button{
@@ -91,4 +97,53 @@
     background: rgb(50, 11, 51);
     color: white;
     transition: .2s;
+}
+
+.channel-index {
+    padding: 0;
+}
+
+.channel-link {
+    padding: 4px 0;
+}
+
+.channel-link:hover,
+.thread-link:hover {
+    background: rgb(50, 11, 51);
+}
+
+.channel-link a{
+    color: #998399;
+    text-decoration: none;
+    display: block;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.channel-link i {
+    font-size: 10px;
+    padding-right: 5px;
+    color: #978198;
+}
+
+.thread-link a{
+    display: block;
+    text-decoration: none;
+    color: #998399;
+    padding: 4px 0 4px 10px;
+    font-size: 16px;
+}
+
+.thread-link i {
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.dropdown-logout {
+    z-index: 1;
+    background: white;
+    position: absolute;
+    padding: 20px;
+    width: 175px;
 }

@@ -12,7 +12,7 @@ class ChannelIndex extends React.Component{
             <ChannelIndexItem key={channel.id} channel={channel} />
         ))
         return (
-            <ul>
+            <ul className="channel-index">
                 {channelLis}
             </ul>
         )

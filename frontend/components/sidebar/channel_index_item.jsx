@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ChannelIndexItem = ({ channel }) => (
-    <li>
+    <li className="channel-link">
         <Link to={`/client/channels/${channel.id}`}>
-            {channel.title}
+            <i className="fas fa-hashtag"></i>{channel.title}
         </Link>
     </li>
 );

@@ -1,0 +1,28 @@
+.internal-navbar-channel-title{
+    font-weight: 900;
+    font-size: 18px;
+    color: rgb(49, 49, 49);
+}
+
+.internal-navbar-channel-title i{
+    font-size: 14px;
+    font-weight: 700;
+    padding-right: 2px;
+}
+
+.internal-cog{
+    color: rgb(92, 89, 89);
+    cursor: pointer;
+}
+
+.internal-cog:hover{
+    color: #5992be;
+}
+
+.internal-navbar{
+    padding: 10px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(231, 230, 230);
+}
