@@ -1,5 +1,4 @@
 export const fetchChannels = () => {
-    debugger;
     return $.ajax({
         url: '/api/channels',
         method: 'GET'
