@@ -40,6 +40,7 @@ class Api::ChannelsController < ApplicationController
         end
     end
 
+
     def add_member
          @user = User.find(params[:user_id])
          @channel = Channel.find(params[:channel_id])

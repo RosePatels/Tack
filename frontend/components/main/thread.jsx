@@ -4,7 +4,7 @@ class Thread extends React.Component {
     render() {
         return (
             <div>
-                IS THIS WORKING?!?
+                There are no messages to display.
             </div>
         );
     }

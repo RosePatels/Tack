@@ -144,6 +144,69 @@
     z-index: 1;
     background: white;
     position: absolute;
-    padding: 20px;
+    left: 15px;
     width: 175px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(143, 140, 140);
+}
+
+.tack-logout-container {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    grid-gap: 5px;
+    padding: 10px;
+}
+
+.tack-logout-square {
+    width: 32px;
+    background: rgb(236, 201, 2);
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tack-logout {
+    font-size: 15px;
+    color: white;
+    padding: 0;
+}
+
+.logout-name{
+    font-weight: 700;
+}
+
+.logout-email {
+    font-weight: 400;
+    color: rgb(97, 96, 96);
+}
+
+.logout-name,
+.logout-email{
+    display: block;
+    font-size: 14px;
+}
+
+.logout-links{
+    padding: 20px 0 10px 0;
+    list-style-type: none;
+}
+
+.logout-button {
+    font-size: 14px;
+    text-align: right;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background: rgb(50, 103, 184);
+    color: white;
+    transition: .2s;
+}
+
+.logout-button-name{
+    padding-right: 15px;
 }

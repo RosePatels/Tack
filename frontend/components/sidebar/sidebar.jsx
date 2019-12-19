@@ -33,7 +33,15 @@ class Sidebar extends React.Component {
         if (this.state.showDropdown){
             return (
                 <div className="dropdown-logout">
-                    <button className="signup-button" onClick={logout}>Logout</button>
+                    <div className="tack-logout-container">
+                        <div className="tack-logout-square"><i className="fas fa-thumbtack tack-logout"></i></div>
+                    <span className="logout-name">{this.props.currentUser.name}</span>
+                    <span className="logout-email">{this.props.currentUser.email}</span>
+                    </div>
+                    <ul className="logout-links">
+                        <li className="logout-button" onClick={logout}><span className="logout-button-name">Logout</span></li>
+                    </ul>
+                    {/* <button className="logout-button" onClick={logout}>Logout</button> */}
                 </div>
             )
         } else {

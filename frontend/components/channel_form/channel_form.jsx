@@ -26,8 +26,11 @@ class ChannelForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = { author_id: this.props.user_id }
-        const channel = Object.assign({}, this.state, user);
+        const user = { author_id: this.props.user_id };
+        const channelId = {id: this.props.channelId};
+        console.log(channelId);
+        const channel = Object.assign({}, this.state, user, channelId);
+        debugger;
         console.log(channel);
         this.props.processForm(channel);
     }
@@ -60,6 +63,7 @@ class ChannelForm extends React.Component {
     }
 
     render() {
+        debugger;
         return (
             <div>
                 {/* <div className="errors-form">{this.renderErrors()}</div> */}

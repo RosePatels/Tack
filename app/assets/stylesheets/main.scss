@@ -29,9 +29,25 @@
 
 .dropdown-channel-gear{
     z-index: 1;
-    background: gray;
+    background: white;
     position: absolute;
-    padding: 20px;
-    width: 100px;
+    width: 170px;
+    top: 30px;
     right: 0px;
+    border-radius: 5px;
+    border: 1px solid rgb(204, 200, 200);
+    padding: 10px 0;
+}
+
+.dropdown-channel-gear li{
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.dropdown-channel-gear li:hover {
+    background: rgb(50, 103, 184);
+    color: white;
+    transition: .2s;
 }

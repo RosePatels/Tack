@@ -26,15 +26,16 @@ class InternalNavbar extends React.Component {
     }
 
     renderDropdown() {
-        const { logout } = this.props;
+        const { channel } = this.props;
+        debugger;
         if (this.state.showDropdown) {
             return (
-                <div className="dropdown-channel-gear">
-                    <button>Invite Members</button>
-                    {this.props.updateChannelForm}
-                    <button>Leave Channel</button>
-                    <button>Delete Channel</button>
-                </div>
+                <ul className="dropdown-channel-gear">
+                    {this.props.inviteMembersForm(channel.id)}
+                    {this.props.removeMembersForm(channel.id)}
+                    {this.props.updateChannelForm(channel.id)}
+                    {/* <button>Delete Channel</button> */}
+                </ul>
             )
         } else {
             return null
