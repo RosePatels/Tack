@@ -4,4 +4,5 @@ json.user do
 end
 json.channel do
         json.partial! "api/channels/channel", channel: @channel
+        json.memberIds @channel.members.pluck(:id)
 end

@@ -1,7 +1,7 @@
 class Channel < ApplicationRecord
-    validates :author_id, :description, :private, :title, presence: true
-    # validates :private, inclusion: { in: [true, false] }
-    # before_save :set_defaults
+    validates :author_id, :description, :title, presence: true
+    validates :private, inclusion: { in: [true, false] }
+    before_validation :set_defaults
 
     belongs_to :author,
         primary_key: :id,
@@ -17,8 +17,7 @@ class Channel < ApplicationRecord
         through: :channel_memberships,
         source: :user
 
-    # def set_defaults
-    #     debugger
-    #     self.private ||= false
-    # end
+    def set_defaults
+        self.private ||= false
+    end
 end

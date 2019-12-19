@@ -7,9 +7,7 @@ class Api::ChannelsController < ApplicationController
 
     def create
             @user = current_user
-            @channel = Channel.new(channel_params)
-            @channel.private ||= true
-            debugger
+            @channel = Channel.new(channel_params)    
          ActiveRecord::Base.transaction do
             @channel.save!
             @channel_membership = @channel.channel_memberships.new({user_id: current_user.id })
