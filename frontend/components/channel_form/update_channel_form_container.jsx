@@ -5,7 +5,6 @@ import ChannelForm from './channel_form';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
     return {
         formType: 'Update Channel',
         errors: Object.values(state.errors.session),

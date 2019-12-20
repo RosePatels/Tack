@@ -26,7 +26,6 @@ const receiveErrors = errors => ({
 
 
 const addMember = channelMembership => {
-    debugger;
     const { channel, user } = channelMembership;
     return {
     type: RECEIVE_CHANNELMEMBERSHIP,
@@ -35,7 +34,6 @@ const addMember = channelMembership => {
 }};
 
 const deleteMember = channelMembership => {
-    debugger;
     const { channel, user } = channelMembership;
     return {
     type: REMOVE_CHANNELMEMBERSHIP,
@@ -70,14 +68,12 @@ export const updateChannel = channel => dispatch => {
 
 export const createChannelMembership = (channelId, memberId) => dispatch => {
     return ChannelApiUtil.addMemberToChannel(channelId, memberId).then(channelMembership => {
-        debugger;
         dispatch(addMember(channelMembership))
     });
 }
 
 export const deleteChannelMembership = (channelId, memberId) => dispatch => {
     return ChannelApiUtil.deleteMemberFromChannel(channelId, memberId).then(response => {
-        debugger;
         dispatch(deleteMember(response))
     });
 }

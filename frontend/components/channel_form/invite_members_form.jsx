@@ -18,7 +18,6 @@ class InviteMembersForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
         const channel_id = this.state.channel_id;
         this.props.processForm(this.state.channel_id, this.state.member_id);
     }

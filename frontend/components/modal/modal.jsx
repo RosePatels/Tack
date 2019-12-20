@@ -43,7 +43,6 @@ function Modal({modal, closeModal}){
 
 const mapStateToProps = (state, ownProps) => {
     console.log(ownProps);
-    debugger;
     return {
         modal: state.ui.modal
     };
