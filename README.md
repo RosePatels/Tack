@@ -15,7 +15,8 @@ Tack is built using the following technologies:
 * React
 * Redux
 
-
+# Features
+Tack's user authentication is built entirely from scratch on both the backend and frontend. Once a user logs in, they are redirected to the client where they have the ability to create their own channels. Channels are areas where users will be able to send their own messages and users that are invited to the channel will be able to read the messages and respond to the messages. Members are also given the ability to leave a channel if they wish. 
 
 # Upcoming Features
 * Live Chat
