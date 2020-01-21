@@ -27,7 +27,6 @@ class InternalNavbar extends React.Component {
 
     renderDropdown() {
         const { channel } = this.props;
-        debugger;
         if (this.state.showDropdown) {
             return (
                 <ul className="dropdown-channel-gear">
