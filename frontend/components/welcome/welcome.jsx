@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import NavBar from '../landing_page/navbar';
-import Splash from '../welcome/splash';
+import SplashContainer from './splash_container';
 
 const Welcome = ({ currentUser, logout }) => {
     return (
         <>
             <NavBar />
-            <Splash />
+            <SplashContainer />
         </>
     );
 }
