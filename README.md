@@ -1,24 +1,24 @@
-# README
+# Tack
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tack is a messaging application inspired from Slack. Users can create their own channels, invite and remove members and message each other within each channel.
 
-Things you may want to cover:
+[Link to Tack](tack-aa.herokuapp.com)
 
-* Ruby version
+Tack is built using the following technologies:
+* HTML
+* CSS
+* SASS
+* JavaScript
+* Postgres
+* Ruby on Rails
+* Webpack
+* React
+* Redux
 
-* System dependencies
+# Features
+Tack's user authentication is built entirely from scratch on both the backend and frontend. Once a user logs in, they are redirected to the client where they have the ability to create their own channels. Channels are areas where users will be able to send their own messages and users that are invited to the channel will be able to read the messages and respond to the messages. Members are also given the ability to leave a channel if they wish. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Upcoming Features
+* Live Chat
+* Direct Messages
+* Group Messages
