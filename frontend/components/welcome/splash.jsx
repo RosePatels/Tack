@@ -27,7 +27,7 @@ class Splash extends React.Component {
                                 <a className="see-the-demo-button" onClick={this.handleDemoUser}>See the Demo</a>
                             </div>
                         </div>
-                        <div className="using-slack">Already using Slack? <Link className="sign-in-email" to="/login">Sign in.</Link></div>
+                        <div className="using-slack">Already using Tack? <Link className="sign-in-email" to="/login">Sign in.</Link></div>
                     </div>
                 </div>
                 {/* <video autoPlay muted loop>
@@ -41,18 +41,18 @@ class Splash extends React.Component {
                     <iframe width="860" height="615" src="https://www.youtube.com/embed/EYqxQGmQkVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div className="breakout-tiles-grid">
-                    <div>
-                        <p>icon</p>
+                    <div className="breakout-tile">
+                        <i class="far fa-sticky-note"></i>
                         <h5>Organized Conversations</h5>
                         <p>Instead of a single overstuffed inbox, conversations in Tack happen in dedicated spaced called channels.</p>
                     </div>
-                    <div>
-                        <p>icon</p>
+                    <div className="breakout-tile">
+                        <i class="fas fa-infinity"></i>
                         <h5>Get Looped in</h5>
                         <p>Tack makes it simple to follow converstations or find important information in an easily searchable archive.</p>
                     </div>
-                    <div>
-                        <p>icon</p>
+                    <div className="breakout-tile">
+                       <i class="far fa-hand-pointer"></i>
                         <h5>Give focus a chance</h5>
                         <p>Unlike email, Tack lets you choose which conversations are most important — and which can wait.</p>
                     </div>

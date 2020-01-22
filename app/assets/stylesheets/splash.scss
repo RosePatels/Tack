@@ -126,7 +126,7 @@
     height: 615px;
     padding: 20px;
     margin: 0 auto;
-    box-shadow: 0px 0px 5px rgb(230, 230, 230);
+    box-shadow: 0px 0px 5px rgb(212, 211, 211);
     border-radius: 5px;
 }
 
@@ -138,6 +138,24 @@
     grid-gap: 50px;
     max-width: 1300px;
     margin: 0 auto;
+}
+
+.breakout-tiles-grid i {
+    font-size: 45px;
+    padding: 0;
+    color: #1D1D1D;
+}
+
+.breakout-tile h5 {
+    padding: 30px 0 20px 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.breakout-tile p {
+    line-height: 2;
+    font-size: 18px;
 }
 
 .convince-channels {
