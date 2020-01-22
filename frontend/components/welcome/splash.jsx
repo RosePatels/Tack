@@ -60,10 +60,10 @@ class Splash extends React.Component {
             </section>
             <section className="convince-channels">
                 <div className="convince-channels-grid">
-                    <div>
+                    <div className="change-to-channels">
                         <h3>Make the Change to Channels</h3>
                         <p>Productive teamwork happens in channels - organized spaces for everything related to a project, topic, or team.</p>
-                        <a>Learn more about Channels -></a>
+                       <a href="#" className="learn-channels">Learn more about Channels <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div>
 
