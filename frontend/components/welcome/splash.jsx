@@ -38,7 +38,7 @@ class Splash extends React.Component {
                 <h3>Break out of the inbox</h3>
                 <h4>Working in channels gives everyone on your team a shared view of progress and purpose.</h4>
                 <div className="youtube-slack-vid">
-                    {/* <iframe width="860" height="615" src="https://www.youtube.com/embed/EYqxQGmQkVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+                    <iframe width="860" height="615" src="https://www.youtube.com/embed/EYqxQGmQkVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div className="breakout-tiles-grid">
                     <div className="breakout-tile">
@@ -102,7 +102,7 @@ class Splash extends React.Component {
             </section>
             <footer>
                <i className="fas fa-thumbtack"></i>
-               <p>Built in 2020. Tack is a clone of <a href="https://slack.com/">Slack</a></p>
+               <p>Built in 2020. Tack is a clone of <a href="https://slack.com/" target="_blank">Slack</a></p>
             </footer>
         </>);
     };
