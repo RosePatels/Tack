@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             name: '',
-            avatar_url: '',
+            avatar_url: 'default_img',
             email: '',
             password: ''
         }
@@ -54,11 +54,12 @@ class SessionForm extends React.Component {
     }
 
     additionalInputs(){
+        // this.setState({avatar_url: 'default'});
         let inputs = (
             <>
-                <p>Enter your <strong>name</strong>, <strong>avatar url</strong>, <strong>email</strong> and <strong>password</strong></p>
+                <p>Enter your <strong>name</strong>, <strong>email</strong> and <strong>password</strong></p>
                 <input type="text" placeholder="name" value={this.state.name} onChange={this.update('name')} />
-                <input type="text" placeholder="avatar url" value={this.state.avatar_url} onChange={this.update('avatar_url')} />
+                {/* <input type="text" placeholder="avatar url" value={this.state.avatar_url} onChange={this.update('avatar_url')} /> */}
             </>
         );
         if (this.props.formType === 'Sign In') {
