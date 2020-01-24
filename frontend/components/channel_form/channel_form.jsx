@@ -32,6 +32,7 @@ class ChannelForm extends React.Component {
         const channel = Object.assign({}, this.state, user, channelId);
         console.log(channel);
         this.props.processForm(channel);
+        this.props.closeModal();
     }
 
     renderErrors() {
