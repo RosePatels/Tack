@@ -18,19 +18,22 @@ class RemoveMembersForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state.channel_id, this.state.member_id);
+        this.props.processForm(this.props.channelId, this.props.userId);
+        this.props.closeModal();
     }
 
     render() {
         return (
-            <div>
-                <button onClick={this.props.closeModal}>X</button>
-                <form onSubmit={this.handleSubmit} className="session-form">
-                    <label>Channel Id</label>
-                    <input placeholder="channel id" type="text" value={this.state.channel_id} onChange={this.update('channel_id')} />
+            <div className="remove-members-form-container">
+                <h2>Leave Channel</h2>
+                <p>Are you sure you want to leave the channel?</p>
+                <form onSubmit={this.handleSubmit} className="remove_members_form">
+                    {/* <label>Channel Id</label>
+                    <input placeholder="channel id" type="text" value={this.props.channel_id} onChange={this.update('channel_id')} />
                     <label>Member Id</label>
-                    <input placeholder="member id" type="text" value={this.state.member_id} onChange={this.update('member_id')} />
-                    <input className="session-form-submit" type="submit" value="Submit" />
+                    <input placeholder="member id" type="text" value={this.props.member_id} onChange={this.update('member_id')} /> */}
+                    <input className="remove-members-submit" type="submit" value="Yes" />
+                    <button onClick={this.props.closeModal} className="remove-members-cancel">No</button>
                 </form>
             </div>
         )
