@@ -54,3 +54,45 @@
     color: #912f9c;
     transition: .2s;
 }
+
+.remove-members-form-container h2{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.remove-members-form-container p{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.remove_members_form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.remove-members-submit {
+    background: #da1212;
+    color: #f8f2f2;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    text-transform: uppercase;
+}
+
+.remove-members-submit:hover {
+    background: rgb(182, 4, 4);
+    transition: .4s;
+}
+
+.remove-members-cancel {
+    background: none;
+    padding: 8px 16px;
+    text-align: center;
+    border: 1px solid #5f5f5f;
+    margin-left: 12px;
+    border-radius: 5px;
+    color: #9c9c9c;
+    font-weight: bold;
+    text-transform: uppercase;
+}

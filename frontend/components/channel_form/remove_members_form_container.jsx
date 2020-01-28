@@ -4,9 +4,11 @@ import { deleteChannelMembership } from '../../actions/channel_actions';
 import RemoveMembersForm from './remove_members_form';
 
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors, session, ui }) => {
     return {
-        errors: Object.values(errors.session)
+        errors: Object.values(errors.session),
+        userId: session.id,
+        channelId: ui.currentChannelId
     }
 };
 
