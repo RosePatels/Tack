@@ -24,6 +24,11 @@ const receiveErrors = errors => ({
     errors
 });
 
+const removeChannel = channelId => ({
+    type: REMOVE_CHANNEL,
+    channelId: channelId
+});
+
 
 const addMember = channelMembership => {
     const { channel, user } = channelMembership;
@@ -63,6 +68,10 @@ export const createChannel = channel => dispatch => {
 export const updateChannel = channel => dispatch => {
     return ChannelApiUtil.updateChannel(channel).then(channel => dispatch(receiveChannel(channel)),
     err => dispatch(receiveErrors(err.responseJSON)));
+}
+
+export const deleteChannel = channelId => dispatch => {
+    return ChannelApiUtil.deleteChannel(channelId).then(() => dispatch(removeChannel(channelId)));
 }
 
 

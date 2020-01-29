@@ -40,6 +40,12 @@ class Api::ChannelsController < ApplicationController
         end
     end
 
+    def destroy
+        @channel = Channel.find(params[:id])
+        @channel_membership = @channel.channel_memberships.where({channel_id: @channel.id}).delete_all
+        @channel.destroy
+    end
+
 
     def add_member
          @user = User.find(params[:user_id])
