@@ -33,7 +33,7 @@ class InternalNavbar extends React.Component {
                     {this.props.inviteMembersForm(channel.id)}
                     {this.props.removeMembersForm(channel.id)}
                     {this.props.updateChannelForm(channel.id)}
-                    {/* <button>Delete Channel</button> */}
+                    {this.props.removeChannelForm(channel.id)}
                 </ul>
             )
         } else {
