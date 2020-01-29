@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import { signup, login, logout } from './actions/session_actions';
-import { createChannel, fetchChannel, updateChannel, fetchChannels, createChannelMembership, deleteChannelMembership } from './actions/channel_actions';
+import { createChannel, fetchChannel, updateChannel, deleteChannel, fetchChannels, createChannelMembership, deleteChannelMembership } from './actions/channel_actions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.createChannel = createChannel;
     window.fetchChannel = fetchChannel;
     window.updateChannel = updateChannel;
+    window.deleteChannel = deleteChannel;
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;

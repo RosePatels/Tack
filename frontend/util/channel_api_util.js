@@ -28,6 +28,13 @@ export const updateChannel = channel => (
     })
 );
 
+export const deleteChannel = channelId => (
+    $.ajax({
+        url: `/api/channels/${channelId}`,
+        method: 'DELETE'
+    })
+);
+
 export const addMemberToChannel = (channelId, memberId) => (
     $.ajax({ 
         url: `/api/channels/${channelId}/add_member`,

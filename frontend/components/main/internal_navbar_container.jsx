@@ -53,6 +53,11 @@ const mapDispatchToProps = dispatch => ({
         return (<li onClick={() => {
             dispatch(openModal('Update Channel', channelId))
         }}>Update channel</li>)
+    },
+    removeChannelForm: (channelId) => {
+        return (<li onClick={() => {
+            dispatch(openModal('Remove Channel', channelId))
+        }}>Remove Channel</li>)
     }
 });
 
