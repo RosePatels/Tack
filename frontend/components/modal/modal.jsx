@@ -24,7 +24,7 @@ function Modal({modal, closeModal}){
         case 'Invite Members':
             component = <InviteMembersFormContainer />
             break;
-        case 'Remove Members':
+        case 'Leave Channel':
             component = <RemoveMembersFormContainer />
             break;
         case 'Remove Channel':
