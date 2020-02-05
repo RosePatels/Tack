@@ -4,10 +4,10 @@ class InviteMembersForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            channel_id: '',
             member_id: ''
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.onButton = this.onButton.bind(this);
     }
 
     update(field) {
@@ -16,23 +16,25 @@ class InviteMembersForm extends React.Component {
         })
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        const channel_id = this.state.channel_id;
-        this.props.processForm(this.state.channel_id, this.state.member_id);
+    onButton(val) {
+        this.props.processForm(this.props.channelId, val);
+        this.props.closeModal();
     }
 
     render(){
+        let { users, channels, channelId } = this.props;
+        let invitedUsers = channels[channelId].memberIds;
+        let notInvitedUsersLi = Object.values(users).map((user, i) => {
+            if(!invitedUsers.includes(user.id)){
+                return <li key={i}><button onClick={() => this.onButton(user.id)}>{user.name}</button></li>
+            }
+        });
         return (
             <div>
                 <button onClick={this.props.closeModal}>X</button>
-                <form onSubmit={this.handleSubmit} className="session-form">
-                    <label>Channel Id</label>
-                    <input placeholder="channel id" type="text" value={this.state.channel_id} onChange={this.update('channel_id')} />
-                    <label>Member Id</label>
-                    <input placeholder="member id" type="text" value={this.state.member_id} onChange={this.update('member_id')} />
-                    <input className="session-form-submit" type="submit" value="Submit" />
-                </form>
+                <ul>
+                    {notInvitedUsersLi}
+                </ul>
             </div>
         )
     }
