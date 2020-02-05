@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:create]
+    resources :users, only: [:create, :index]
     resource :session, only: [:create, :destroy, :show]
     resources :channels, only: [:index, :create, :show, :update, :destroy] do
       post "add_member", to: 'channels#add_member', as: 'add_member'

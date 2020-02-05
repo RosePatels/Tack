@@ -6,7 +6,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        channel: ownProps.channel
+        channel: ownProps.channel,
+        users: state.entities.users
     };
 };
 
@@ -58,6 +59,11 @@ const mapDispatchToProps = dispatch => ({
         return (<li onClick={() => {
             dispatch(openModal('Remove Channel', channelId))
         }}>Remove Channel</li>)
+    },
+    memberList: (channelId, memberIdCount) => {
+        return (<p onClick={() => {
+            dispatch(openModal('Member List', channelId))
+        }}>Member Count: {memberIdCount}</p>)
     }
 });
 
