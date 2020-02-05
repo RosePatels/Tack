@@ -3,7 +3,9 @@ import ChannelIndex from './channel_index';
 import { fetchChannels } from '../../actions/channel_actions';
 
 const mapStateToProps = state => ({
-    channels: Object.values(state.entities.channels)
+    channels: Object.values(state.entities.channels),
+    users: state.entities.users,
+    currentUserId: state.session.id
 });
 
 const mapDispatchToProps = dispatch => ({
