@@ -42,10 +42,13 @@ class InternalNavbar extends React.Component {
     }
 
     render() {
+        let memberIdsArray = [];
+        let memberIds = memberIdsArray.concat(this.props.channel.memberIds).length;
         return (
             <div className="main-container">
                     <nav className="internal-navbar">
                         <h2 className="internal-navbar-channel-title"><i className="fas fa-hashtag"></i>{this.props.channel.title}</h2>
+        <p>Member Count: {memberIds}</p>
                         <div className="channel-dropdown" onClick={this.toggleDropdown}>
                             <i className="fas fa-cog internal-cog"></i>
                             {this.renderDropdown()}

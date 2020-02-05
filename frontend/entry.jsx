@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import { signup, login, logout } from './actions/session_actions';
 import { createChannel, fetchChannel, updateChannel, deleteChannel, fetchChannels, createChannelMembership, deleteChannelMembership } from './actions/channel_actions';
+import { fetchUsers } from './actions/user_actions';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,10 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore(preloadedState);
     delete window.currentUser;
 
-    window.createChannel = createChannel;
-    window.fetchChannel = fetchChannel;
-    window.updateChannel = updateChannel;
-    window.deleteChannel = deleteChannel;
+    window.fetchUsers = fetchUsers;
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
