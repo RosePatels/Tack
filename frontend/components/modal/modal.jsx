@@ -6,6 +6,7 @@ import UpdateChannelFormContainer from '../channel_form/update_channel_modal';
 import InviteMembersFormContainer from '../channel_form/invite_members_form_container';
 import RemoveMembersFormContainer from '../channel_form/remove_members_form_container';
 import RemoveChannelFormContainer from '../channel_form/remove_channel_form_container';
+import MemberListContainer from '../main/member_list_container';
 import { withRouter } from 'react-router-dom';
 
 function Modal({modal, closeModal}){
@@ -29,6 +30,9 @@ function Modal({modal, closeModal}){
             break;
         case 'Remove Channel':
             component = <RemoveChannelFormContainer />
+            break;
+        case 'Member List':
+            component = <MemberListContainer />
             break;
         default:
             return null;
