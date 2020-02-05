@@ -17,6 +17,11 @@ const mapDispatchToProps = dispatch => ({
         <button className="add-channel-button" onClick={() => {
             dispatch(openModal('Create Channel'))
         }}><i className="fas fa-plus plus-icon"></i>Add a channel</button>
+    ),
+    channelsIndex: (
+        <h3 className="channels-header" onClick={() => {
+            dispatch(openModal('All Channels'))
+        }}>Channels</h3>
     )
 });
 

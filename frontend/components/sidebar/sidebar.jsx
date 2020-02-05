@@ -61,7 +61,7 @@ class Sidebar extends React.Component {
                     <Link to={`/client/threads`} ><i className="far fa-comment"></i>Threads</Link>
                 </div>
                 <div className="channels-container">
-                    <h3 className="channels-header">Channels</h3>
+                    {this.props.channelsIndex}
                     <ChannelIndexContainer />
                 </div>
                 <div className="channel-modal">
