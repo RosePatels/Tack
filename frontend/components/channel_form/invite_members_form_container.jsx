@@ -4,9 +4,12 @@ import { createChannelMembership } from '../../actions/channel_actions';
 import InviteMembersForm from './invite_members_form';
 
 
-const mapStateToProps = ({errors}) => {
+const mapStateToProps = (state) => {
     return {
-        errors: Object.values(errors.session)
+        errors: Object.values(state.errors.session),
+        channelId: state.ui.currentChannelId,
+        channels: state.entities.channels,
+        users: state.entities.users
     }
 };
 

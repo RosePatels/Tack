@@ -12,6 +12,7 @@ class MemberList extends React.Component {
         })
         return (
             <div>
+                <button onClick={this.props.closeModal}>X</button>
                 <ul>
                     {memberNamesLi}
                 </ul>
