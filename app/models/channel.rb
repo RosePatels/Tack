@@ -17,6 +17,8 @@ class Channel < ApplicationRecord
         through: :channel_memberships,
         source: :user
 
+    has_many :messages, :as => :messageable
+
     def set_defaults
         self.private ||= false
     end
