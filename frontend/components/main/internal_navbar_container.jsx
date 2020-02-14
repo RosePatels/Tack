@@ -63,7 +63,7 @@ const mapDispatchToProps = dispatch => ({
     memberList: (channelId, memberIdCount) => {
         return (<p onClick={() => {
             dispatch(openModal('Member List', channelId))
-        }}>Member Count: {memberIdCount}</p>)
+        }} className="member-id-count"><i className="far fa-user"></i> {memberIdCount}</p>)
     }
 });
 

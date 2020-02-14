@@ -14,9 +14,7 @@ class ChannelDetail extends React.Component {
         return (
             <div>
                 <InternalNavbarContainer channel={channel}/>
-                <h2>{channel.title}</h2>
-                <p>{channel.description}</p>
-                <ChatRoom />
+                {/* <ChatRoom /> */}
             </div>
         )
     }

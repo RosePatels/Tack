@@ -8,7 +8,11 @@ class ChannelIndex extends React.Component{
 
     render(){
         let { channels, users, currentUserId } = this.props;
+     
         let channelIds = users[currentUserId].channelIds;
+        if(!channelIds){
+            return null;
+        }
         let channelLis = Object.values(channels).map(channel => {
             if (channelIds.includes(channel.id)){
                 return <ChannelIndexItem key={channel.id} channel={channel} />

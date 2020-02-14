@@ -24,6 +24,7 @@
     background: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid rgb(231, 230, 230);
 }
 
@@ -50,4 +51,36 @@
     background: rgb(50, 103, 184);
     color: white;
     transition: .2s;
+}
+
+.channel-star {
+    display: inline;
+    padding: 0px 10px;
+    // border-right: 1px solid gray;
+    cursor: pointer;
+}
+
+.channel-star i {
+    font-size: 11px;
+}
+
+.channel-star:hover {
+    color: rgb(247, 222, 1);
+}
+
+.member-id-count {
+    font-size: 12px;
+    display: inline;
+    // border-right: 1px solid gray;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
+.member-id-count i {
+    font-size: 11px;
+    padding-right: 2px;
+}
+
+.member-id-count:hover {
+    color: #5992be;
 }
