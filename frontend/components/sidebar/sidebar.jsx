@@ -57,16 +57,18 @@ class Sidebar extends React.Component {
                     <p className="client-logo-name"><i className="fas fa-thumbtack tack-size"></i>{this.props.currentUser.name}</p>
                 </div>
                 {this.renderDropdown()}
-                <div className="thread-link">
-                    <Link to={`/client/threads`} ><i className="far fa-comment"></i>Threads</Link>
-                </div>
-                <div className="channels-container">
-                    {this.props.channelsIndex}
-                    <ChannelIndexContainer />
-                </div>
-                <div className="channel-modal">
-                    {/* {<Modal />} */}
-                    {this.props.otherForm}
+                <div className="sidebar-content-container">
+                    <div className="thread-link">
+                        <Link to={`/client/threads`} ><i className="far fa-comment"></i>Threads</Link>
+                    </div>
+                    <div className="channels-container">
+                        {this.props.channelsIndex}
+                        <ChannelIndexContainer />
+                    </div>
+                    <div className="channel-modal">
+                        {/* {<Modal />} */}
+                        {this.props.otherForm}
+                    </div>
                 </div>
             </div>
         );

@@ -7,6 +7,29 @@
 
 .sidebar-container{
     background: #3F0E40;
+    overflow-y: hidden;
+}
+
+.sidebar-content-container{
+    overflow-y: auto;
+    margin-top: 70px;
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+.sidebar-content-container::-webkit-scrollbar{
+    width: 10px;
+    background: rgb(50, 11, 51);
+    margin-top: 75px;
+}
+
+.sidebar-content-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.329);
+  border-radius: 10px;
+}
+
+.sidebar-content-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.178);
 }
 
 .client-logo{
@@ -41,6 +64,9 @@
 .client-logo-dropdown{
     padding: 10px;
     color: white;
+    position: fixed;
+    width: 202px;
+    background: #3f0e40;
 }
 
 .client-logo-dropdown:hover{
