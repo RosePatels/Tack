@@ -30,9 +30,13 @@ class Splash extends React.Component {
                         <div className="using-slack">Already using Tack? <Link className="sign-in-email" to="/login">Sign in.</Link></div>
                     </div>
                 </div>
+               <div className="mail-container"><i class="far fa-envelope"></i></div>
+
+               {/* <div className="img-container"><img className="phone-img" src={window.slackphone} /></div> */}
                 {/* <video autoPlay muted loop>
                 <source src="phone_video.mp4" type="video/mp4"></source>
-                </video> */}    
+                </video> */}  
+
             </section>
             <section className="breakout-inbox">
                 <h3>Break out of the inbox</h3>
@@ -66,7 +70,7 @@ class Splash extends React.Component {
                        <a href="#" className="learn-channels">Learn more about Channels <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div>
-
+                       <img className="channel-img"src={window.channelscreenshot} /> 
                     </div>
                 </div>
             </section>

@@ -2,10 +2,9 @@
     background: #E5E1DC;
     width: 100%;
     height: 450px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    grid-gap: 30px;
 }
 
 .replace-email-content-centered {
@@ -14,8 +13,26 @@
 
 .replace-email-container {
     padding: 40px;
-    // max-width: 1300px;
-    // margin: 0 auto;
+}
+
+.mail-container {
+    font-size: 18em;
+    justify-self: start;
+    padding-top: 40px;
+    font-weight: 300;
+    color: #4a1750;
+}
+
+.img-container {
+    width: 300px;
+    border-radius: 50%;
+    height: 300px;
+    justify-self: center;
+    padding-top: 50px;
+}
+
+.phone-img {
+    border-radius: 50%;
 }
 
 .replace-email-container h2{
@@ -177,6 +194,9 @@
     grid-template-columns: 1fr 1fr;
     max-width: 1000px;
     margin: 0 auto;
+    grid-gap: 40px;
+    align-items: center;
+    justify-items: center;
 }
 
 .change-to-channels h3{
@@ -381,4 +401,10 @@ footer a {
 footer a:hover {
     transition: .1s;
     box-shadow: 0 2px 0 0 #1264a3;
+}
+
+.channel-img,
+.phone-img {
+    width: 100%;
+    height: 100%;
 }
