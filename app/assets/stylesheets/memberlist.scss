@@ -43,7 +43,8 @@
     font-weight: 700;
 }
 
-.member-name .fa-thumbtack {
+.member-name .fa-thumbtack,
+.member-name-buttons .fa-thumbtack {
     color: #091d09;
     padding-right: 4px;
     font-size: 11px
@@ -55,4 +56,30 @@
     height: 8px;
     margin-left: 10px;
     border-radius: 50%;
+}
+
+.member-names-button-list {
+    height: 300px;
+    overflow: auto;
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.member-name-buttons button{
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    color: #3a3939;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.member-name-buttons button:hover {
+    background: #ececec;
+    transition: .2s;
 }
