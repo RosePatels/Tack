@@ -16,10 +16,18 @@ class AllChannelForm extends React.Component {
         ))
         return (
             <>
-                <button onClick={this.props.closeModal}>X</button>
-                <ul className="channel-index">
-                    {channelLis}
-                </ul>
+                <div className="all_channel_form">
+                    <div className="esc-button"><button onClick={this.props.closeModal}>X</button></div>
+                    <div className="browse-channels-container">
+                        <h2>Browse Channels</h2>
+                        <div className="browse-index-container">
+                            <span>All Channels</span>
+                            <ul className="browse-channel-index">
+                                {channelLis}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </>
         )
     }

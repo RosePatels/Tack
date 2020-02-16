@@ -8,12 +8,18 @@
   z-index: 10;
 }
 
-.modal-child {
+.remove-members-form-container,
+.member_list {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  padding: 20px;
-  
+  padding: 20px; 
+}
+
+.all_channel_form {
+  width: 100%;
+  background: white;
+  height: 100vh;
 }

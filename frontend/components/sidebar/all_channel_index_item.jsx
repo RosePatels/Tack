@@ -10,9 +10,10 @@ class AllChannelIndexItem extends React.Component {
 
     render(){
         return (
-            <li className="channel-link">
+            <li className="browse-channel-link">
                 <Link to={`/client/channels/${this.props.channel.id}`} onClick={() => this.props.closeModal()}>
-                    <i className="fas fa-hashtag"></i>{this.props.channel.title}
+                    <p className="browse-channel-title"><i className="fas fa-hashtag"></i>{this.props.channel.title}</p>
+                    <p className="browse-channel-description">{this.props.channel.description}</p>
                 </Link>
             </li>
         )

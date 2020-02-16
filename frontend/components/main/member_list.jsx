@@ -11,7 +11,7 @@ class MemberList extends React.Component {
             return <li key={i}>{users[userId].name}</li>
         })
         return (
-            <div>
+            <div className="member_list">
                 <button onClick={this.props.closeModal}>X</button>
                 <ul>
                     {memberNamesLi}
