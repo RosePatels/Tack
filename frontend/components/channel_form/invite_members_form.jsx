@@ -26,13 +26,16 @@ class InviteMembersForm extends React.Component {
         let invitedUsers = channels[channelId].memberIds;
         let notInvitedUsersLi = Object.values(users).map((user, i) => {
             if(!invitedUsers.includes(user.id)){
-                return <li key={i}><button onClick={() => this.onButton(user.id)}>{user.name}</button></li>
+                return <li key={i} className="member-name-buttons"><button onClick={() => this.onButton(user.id)}><i className="fas fa-thumbtack tack-size"></i>{user.name}<div class="circle"></div></button></li>
             }
         });
         return (
-            <div>
-                <button onClick={this.props.closeModal}>X</button>
-                <ul>
+            <div className="member_list">
+                <div className="member-list-header">
+                    <button onClick={this.props.closeModal}>X</button>
+                    <h3>Invite Members</h3>
+                </div>
+                <ul className="member-names-button-list">
                     {notInvitedUsersLi}
                 </ul>
             </div>

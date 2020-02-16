@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ChannelIndex from './channel_index';
 import { fetchChannels } from '../../actions/channel_actions';
+import { fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = state => ({
     channels: Object.values(state.entities.channels),
@@ -9,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchChannels: () => dispatch(fetchChannels())
+    fetchChannels: () => dispatch(fetchChannels()),
+    fetchUsers: () => dispatch(fetchUsers())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelIndex);

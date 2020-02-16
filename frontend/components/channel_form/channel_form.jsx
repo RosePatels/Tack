@@ -45,37 +45,35 @@ class ChannelForm extends React.Component {
         );
     }
 
-    additionalInputs() {
-        let inputs = (
-            <>
-                <p>Enter your <strong>name</strong>, <strong>avatar url</strong>, <strong>email</strong> and <strong>password</strong></p>
-                <input type="text" placeholder="name" value={this.state.name} onChange={this.update('name')} />
-                <input type="text" placeholder="avatar url" value={this.state.avatar_url} onChange={this.update('avatar_url')} />
-            </>
-        );
-        if (this.props.formType === 'Sign In') {
-            inputs = (<>
-                <p>Enter your <strong>email</strong> and <strong>password</strong></p></>);
-            return inputs;
-        } else {
-            return inputs;
+    channelFormSubmit() {
+        let submitVal = "Update"
+        if (this.props.formType === "Create Channel") {
+            submitVal = "Create"
         }
+        return submitVal;
     }
+
 
     render() {
         return (
-            <div>
+            <div className="channel-form-container">
                 {/* <div className="errors-form">{this.renderErrors()}</div> */}
                 {/* {this.props.otherForm} */}
-                <button onClick={this.props.closeModal}>X</button>
-                <form onSubmit={this.handleSubmit} className="session-form">
-                    <label>Title:</label>
-                    <input placeholder="title" type="text" value={this.state.title} onChange={this.update('title')} />
-                    <label>Description:</label>
-                    <textarea value={this.state.description} onChange={this.update('description')}></textarea>
-                    <label>Private:</label>
-                    <input type="checkbox" value={this.state.private} onChange={this.checkedOff} />
-                    <input className="session-form-submit" type="submit" value={this.props.formType} />
+                <div className="member-list-header">
+                    <button onClick={this.props.closeModal}>X</button>
+                     <h3>{this.props.formType}</h3>
+                </div>
+                <p>Channels are where your team communicates. They're best when they are organized around a topic - #marketing, for example.</p>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Title <span>(required)</span>:</label>
+                    <input placeholder="#marketing" type="text" value={this.state.title} onChange={this.update('title')} />
+                    <label>Description <span>(required)</span>:</label>
+                    <textarea placeholder="The marketing team talks about all things marketing here!" value={this.state.description} onChange={this.update('description')}></textarea>
+                    <div className="private-flex">
+                        <label>Private <span>(optional)</span>:</label>
+                        <input type="checkbox" value={this.state.private} onChange={this.checkedOff} />
+                    </div>
+                    <div className="channel-form-submit"><input type="submit" value={this.channelFormSubmit()} /></div>
                 </form>
             </div>
         );

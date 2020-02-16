@@ -7,6 +7,29 @@
 
 .sidebar-container{
     background: #3F0E40;
+    overflow-y: hidden;
+}
+
+.sidebar-content-container{
+    overflow-y: auto;
+    margin-top: 70px;
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+.sidebar-content-container::-webkit-scrollbar{
+    width: 10px;
+    background: rgb(50, 11, 51);
+    margin-top: 75px;
+}
+
+.sidebar-content-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.329);
+  border-radius: 10px;
+}
+
+.sidebar-content-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.178);
 }
 
 .client-logo{
@@ -41,6 +64,9 @@
 .client-logo-dropdown{
     padding: 10px;
     color: white;
+    position: fixed;
+    width: 202px;
+    background: #3f0e40;
 }
 
 .client-logo-dropdown:hover{
@@ -64,9 +90,106 @@
 }
 
 .channels-header{
-    padding-left: 10px;
     color: rgb(215, 204, 215);
     padding-bottom: 4px;
+    cursor: pointer;
+    padding: 10px 0 10px 10px;
+}
+
+.esc-button {
+  width: 100%;
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  button {
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    color: gray;
+    margin-right: 20px;
+    font-size: 20px;
+    width: 62px;
+  }
+}
+
+.esc-button button:hover{
+    background: lightgray;
+    transition: .2s;
+}
+
+.all_channel_form h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1D1D1D;
+    letter-spacing: 1px;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.browse-channels-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.browse-channel-index {
+    list-style-type: none;
+    padding-top: 5px;
+}
+
+.browse-index-container {
+    height: 500px;
+    overflow: auto;
+    span {
+        font-size: 14px;
+        color: gray;
+    }
+}
+
+.browse-index-container::-webkit-scrollbar{
+    background: white;
+    width: 7px;
+}
+
+.browse-index-container::-webkit-scrollbar-thumb {
+  background: rgba(66, 66, 66, 0.678);
+  border-radius: 10px;
+}
+
+.browse-channel-link{
+    i {
+        font-size: 12px;
+        padding-right: 2px;
+    }
+    a {
+        color: #474545;
+        padding: 10px 15px;
+        display: block;
+        text-decoration: none;
+    }
+    border-top: 1px solid #e5e3e3;
+}
+
+.browse-channel-title {
+    font-weight: 700;
+    color: #1D1D1D;
+    font-size: 15px;
+}
+
+.browse-channel-description {
+    color: #8d8a8a;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.browse-channel-link a:hover {
+    background: #f6f6f6;
+}
+
+.channels-header:hover {
+    background: rgb(50, 11, 51);
+    transition: .2s;
+    color: white;
 }
 
 .channel-modal{
@@ -82,6 +205,7 @@
     font-weight: 400;
     width: 100%;
     text-align: left;
+    cursor: pointer;
 }
 
 .plus-icon {
@@ -145,6 +269,7 @@
     background: white;
     position: absolute;
     left: 15px;
+    top: 50px;
     width: 175px;
     border-radius: 5px;
     display: flex;

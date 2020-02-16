@@ -1,0 +1,85 @@
+.member_list {
+    width: 450px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.member-list-header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.member-list-header button{
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    color: gray;
+}
+
+.member-list-header button:hover{
+    background: rgb(236, 234, 234);
+    transition: .2s;
+}
+
+.member-list-header h3 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.member-names-list {
+    height: 300px;
+    overflow: auto;
+    list-style-type: none;
+}
+
+.member-names-list li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #3a3939;
+    font-weight: 700;
+}
+
+.member-name .fa-thumbtack,
+.member-name-buttons .fa-thumbtack {
+    color: #091d09;
+    padding-right: 4px;
+    font-size: 11px
+}
+
+.circle {
+    background: #387c38;
+    width: 8px;
+    height: 8px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.member-names-button-list {
+    height: 300px;
+    overflow: auto;
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.member-name-buttons button{
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    color: #3a3939;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.member-name-buttons button:hover {
+    background: #ececec;
+    transition: .2s;
+}
