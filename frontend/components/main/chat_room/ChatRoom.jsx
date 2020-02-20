@@ -12,7 +12,7 @@ class ChatRoom extends React.Component {
         let {channelId, authorId} = this.props;
         App.cable.subscriptions.create(
             { channel: "ChatChannel",
-                messageable_id: channelId,
+                channel_id: channelId,
                 author_id: authorId
             },
             {
