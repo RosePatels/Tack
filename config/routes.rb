@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :channels, only: [:index, :create, :show, :update, :destroy] do
       post "add_member", to: 'channels#add_member', as: 'add_member'
       delete "remove_member", to: 'channels#remove_member', as: 'remove_member'
+      resources :messages, only: [:index]
     end
+    resources :messages, only: [:show]
   end
 end
