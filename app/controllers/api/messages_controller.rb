@@ -6,4 +6,10 @@ class Api::MessagesController < ApplicationController
         render "api/messages/index"
     end
 
+
+    def show
+        # debugger;
+        @message = Message.find(params[:id]);
+        render "api/messages/show"
+    end
 end

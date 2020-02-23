@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       delete "remove_member", to: 'channels#remove_member', as: 'remove_member'
       resources :messages, only: [:index]
     end
+    resources :messages, only: [:show]
   end
 end

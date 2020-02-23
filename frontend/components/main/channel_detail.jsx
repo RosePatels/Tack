@@ -1,6 +1,5 @@
 import React from 'react';
 import InternalNavbarContainer from './internal_navbar_container';
-import ChatRoom from './chat_room/ChatRoom';
 import ChatRoomContainer from './chat_room/chatroom_container';
 
 class ChannelDetail extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import MessageForm from './MessageForm';
+import MessageFormContainer from './message_form_container';
 
 class ChatRoom extends React.Component {
     constructor(props){
@@ -9,8 +9,8 @@ class ChatRoom extends React.Component {
     }
 
     componentDidMount(){
-        let {channelId, authorId, fetchChannelMessages } = this.props;
-        fetchChannelMessages(channelId)
+        let {channelId, authorId, fetchChannelMessages, fetchMessage } = this.props;
+        fetchChannelMessages(channelId);
 
         App.cable.subscriptions.create(
             { channel: "ChatChannel",
@@ -19,13 +19,9 @@ class ChatRoom extends React.Component {
             },
             {
                 received: data => {
-                    debugger;
-                    this.setState({
-                        messages: this.state.messages.concat([data])
-                    });
+                    this.props.fetchMessage(data.message_id)
                 },
                 speak: function(data) {
-                    debugger;
                     return this.perform("speak", data);
                 }
             }
@@ -35,31 +31,30 @@ class ChatRoom extends React.Component {
     // componentDidUpdate(){
     //     this.bottom.current.scrollIntoView();
     // }
+    
+    componentDidUpdate(prevProps){
+        if(this.props.channelId !== prevProps.channelId){
+            this.props.fetchChannelMessages(this.props.channelId);
+        }
+    }
 
     render(){
         const { users, messages } = this.props;
-
         const pastMessagesList = Object.values(messages).map((message, i) => {
             return <li key={i}>
                 <h5>{users[message.author_id].name}</h5>{message.body}
             </li>
         });
-        const messageList = this.state.messages.map((message_data, i) => {
-            debugger;
-            return (
-                <li key={i}>
-                    <h5>{users[message_data.author_id].name}</h5>{message_data.message}
-                    <div ref={this.bottom} />
-                </li>
-            )
-        });
+      
+
+        
 
         return (
             <div className="chatroom-container">
                 <div>ChatRoom</div>
                 <div className="message-list">{pastMessagesList}</div>
-                <div className="message-list">{messageList}</div>
-                <MessageForm />
+                {/* <div className="message-list">{messageList}</div> */}
+                <MessageFormContainer channelId={this.props.channelId}/>
             </div>
         )
     }
