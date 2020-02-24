@@ -41,8 +41,9 @@ class ChatRoom extends React.Component {
     render(){
         const { users, messages } = this.props;
         const pastMessagesList = Object.values(messages).map((message, i) => {
-            return <li key={i}>
-                <h5>{users[message.author_id].name}</h5>{message.body}
+            return <li key={i} className="individual-message">
+                <div className="avatar-img">{users[message.author_id].name[0]}</div>
+                <div><h5>{users[message.author_id].name}</h5><p className="message-body">{message.body}</p></div>
             </li>
         });
       
@@ -51,10 +52,11 @@ class ChatRoom extends React.Component {
 
         return (
             <div className="chatroom-container">
-                <div>ChatRoom</div>
-                <div className="message-list">{pastMessagesList}</div>
+                <div className="message-list-container">
+                    <ul className="message-list">{pastMessagesList}</ul>
+                </div>
                 {/* <div className="message-list">{messageList}</div> */}
-                <MessageFormContainer channelId={this.props.channelId}/>
+                <div><MessageFormContainer channelId={this.props.channelId} /></div>
             </div>
         )
     }

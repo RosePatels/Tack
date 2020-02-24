@@ -1,3 +1,29 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message-list {
+    list-style-type: none;
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100vh - 81px);
+}
+
+.individual-message {
+    padding: 10px 20px;
+    display: flex;
+    overflow-wrap: break-word;
+
+}
+
+.avatar-img {
+    height: 35px;
+    width: 35px;
+    background: green;
+    color: white;
+}
+
+.message-body {
+    width: calc(100vw - 282px);
+    overflow-wrap: break-word;
+}
