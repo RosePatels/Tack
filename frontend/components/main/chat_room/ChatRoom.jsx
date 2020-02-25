@@ -43,7 +43,7 @@ class ChatRoom extends React.Component {
         const pastMessagesList = Object.values(messages).map((message, i) => {
             return <li key={i} className="individual-message">
                 <div className="avatar-img">{users[message.author_id].name[0]}</div>
-                <div><h5>{users[message.author_id].name}</h5><p className="message-body">{message.body}</p></div>
+                <div><h5 className="message-author">{users[message.author_id].name}</h5><p className="message-body">{message.body}</p></div>
             </li>
         });
       

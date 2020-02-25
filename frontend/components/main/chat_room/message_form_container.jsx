@@ -5,6 +5,7 @@ import { fetchChannelMessages, fetchMessage } from '../../../actions/message_act
 const mapStateToProps = (state, ownProps) => {
     return {
         channelId: ownProps.channelId,
+        channels: state.entities.channels
     }
 };
 
