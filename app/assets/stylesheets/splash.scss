@@ -13,14 +13,17 @@
 
 .replace-email-container {
     padding: 40px;
+    align-items: center;
+    display: flex;
 }
 
 .mail-container {
     font-size: 18em;
     justify-self: start;
-    padding-top: 40px;
     font-weight: 300;
     color: #4a1750;
+    display: flex;
+    align-items: center;
 }
 
 .img-container {
