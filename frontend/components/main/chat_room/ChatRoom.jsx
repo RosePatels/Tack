@@ -28,32 +28,35 @@ class ChatRoom extends React.Component {
         )
     }
 
-    // componentDidUpdate(){
-    //     this.bottom.current.scrollIntoView();
-    // }
     
     componentDidUpdate(prevProps){
         if(this.props.channelId !== prevProps.channelId){
             this.props.fetchChannelMessages(this.props.channelId);
+        }
+        if(this.bottom.current){
+            this.bottom.current.scrollIntoView();
         }
     }
 
     render(){
         const { users, messages } = this.props;
         const pastMessagesList = Object.values(messages).map((message, i) => {
-            return <li key={i} className="individual-message">
+            return <li key={i} className="individual-message" >
                 <div className="avatar-img">{users[message.author_id].name[0]}</div>
                 <div><h5 className="message-author">{users[message.author_id].name}</h5><p className="message-body">{message.body}</p></div>
+                <div ref={this.bottom} />
             </li>
         });
-      
-
         
+
 
         return (
             <div className="chatroom-container">
                 <div className="message-list-container">
-                    <ul className="message-list">{pastMessagesList}</ul>
+                    <ul className="message-list">
+                        {pastMessagesList}
+                    
+                    </ul>
                 </div>
                 {/* <div className="message-list">{messageList}</div> */}
                 <div><MessageFormContainer channelId={this.props.channelId} /></div>
