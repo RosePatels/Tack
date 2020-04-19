@@ -1,6 +1,6 @@
 import React from "react";
 import MessageFormContainer from './message_form_container';
-
+import MessageListItemContainer from './message_list_item_container';
 class ChatRoom extends React.Component {
     constructor(props){
         super(props);
@@ -39,13 +39,12 @@ class ChatRoom extends React.Component {
     }
 
     render(){
-        const { users, messages } = this.props;
+        const { messages } = this.props;
         const pastMessagesList = Object.values(messages).map((message, i) => {
-            return <li key={i} className="individual-message" >
-                <div className="avatar-img">{users[message.author_id].name[0]}</div>
-                <div><h5 className="message-author">{users[message.author_id].name}</h5><p className="message-body">{message.body}</p><button onClick={() => {this.props.deleteMessage(this.props.channelId, message.id)}}>Delete</button></div>
+            return (<li key={i} className="individual-message" >
+                <MessageListItemContainer message={message}/>
                 <div ref={this.bottom} />
-            </li>
+            </li>)
         });
         
 
