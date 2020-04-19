@@ -5,7 +5,7 @@ import { signup, login, logout } from './actions/session_actions';
 import { createChannel, fetchChannel, updateChannel, deleteChannel, fetchChannels, createChannelMembership, deleteChannelMembership } from './actions/channel_actions';
 import { fetchUsers } from './actions/user_actions';
 import configureStore from './store/store';
-
+import { deleteMessageFromChannel } from './actions/message_actions';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     delete window.currentUser;
 
     window.fetchUsers = fetchUsers;
+    window.deleteMessage = deleteMessageFromChannel;
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;

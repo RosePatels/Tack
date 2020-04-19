@@ -32,7 +32,7 @@ class ChannelForm extends React.Component {
         const channel = Object.assign({}, this.state, user, channelId);
         console.log(channel);
         this.props.processForm(channel);
-        this.props.closeModal();
+        // this.props.closeModal();
     }
 
     renderErrors() {
@@ -57,7 +57,7 @@ class ChannelForm extends React.Component {
     render() {
         return (
             <div className="channel-form-container">
-                {/* <div className="errors-form">{this.renderErrors()}</div> */}
+                <div className="errors-form">{this.renderErrors()}</div>
                 {/* {this.props.otherForm} */}
                 <div className="member-list-header">
                     <button onClick={this.props.closeModal}>X</button>

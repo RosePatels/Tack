@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ChatRoom from './ChatRoom';
-import { fetchChannelMessages, fetchMessage } from '../../../actions/message_actions';
+import { fetchChannelMessages, fetchMessage, deleteMessageFromChannel } from '../../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)),
-    fetchMessage: messageId => dispatch(fetchMessage(messageId))
+    fetchMessage: messageId => dispatch(fetchMessage(messageId)),
+    deleteMessage: (channelId, messageId) => dispatch(deleteMessageFromChannel(channelId, messageId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChatRoom);

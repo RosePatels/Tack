@@ -13,3 +13,10 @@ export const fetchMessage = messageId => (
         method: 'GET'
     })
 );
+
+export const deleteMessage = (channelId, messageId) => (
+    $.ajax({
+        url: `/api/channels/${channelId}/messages/${messageId}`,
+        method: 'DELETE'
+    })
+);

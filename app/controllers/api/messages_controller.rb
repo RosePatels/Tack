@@ -12,4 +12,9 @@ class Api::MessagesController < ApplicationController
         @message = Message.find(params[:id]);
         render "api/messages/show"
     end
+
+    def destroy
+        @message = Message.find(params[:id])
+        @message.destroy
+    end
 end
