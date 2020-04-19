@@ -61,11 +61,9 @@ export const fetchChannels = () => dispatch => {
 
 export const createChannel = channel => dispatch => {
     return ChannelApiUtil.createChannel(channel).then(response => {
-        debugger;
         dispatch(receiveChannel(response))
     },
     err => {
-        debugger;
         dispatch(receiveErrors(err.responseJSON))
     });
 }

@@ -32,7 +32,7 @@ class ChannelForm extends React.Component {
         const channel = Object.assign({}, this.state, user, channelId);
         console.log(channel);
         this.props.processForm(channel);
-        // this.props.closeModal();
+        this.props.closeModal();
     }
 
     renderErrors() {
@@ -67,7 +67,7 @@ class ChannelForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Title <span>(required)</span>:</label>
                     <input placeholder="#marketing" type="text" value={this.state.title} onChange={this.update('title')} />
-                    <label>Description <span>(required)</span>:</label>
+                    <label>Description <span>(optional)</span>:</label>
                     <textarea placeholder="The marketing team talks about all things marketing here!" value={this.state.description} onChange={this.update('description')}></textarea>
                     <div className="private-flex">
                         <label>Private <span>(optional)</span>:</label>
