@@ -14,10 +14,10 @@ class MessageListItem extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const { message } = this.props;
+        const { message, updateMessage } = this.props;
 
-        updateComment({ id: message.id, body: this.state.body })
-        this.setState({ edit: false })
+        updateMessage({ id: message.id, body: this.state.body });
+        this.setState({ edit: false });
     }
 
     update(field) {
@@ -70,7 +70,7 @@ class MessageListItem extends React.Component {
         if (authorId === message.author_id) {
             authButtons = <div className="auth-buttons">
                 <button onClick={this.handleEdit}>Edit</button>
-                <button onClick={() => { this.props.deleteMessage(this.props.channelId, message.id) }}>Delete</button>
+                <button onClick={() => { this.props.deleteMessage(message.id) }}>Delete</button>
             </div>
         }
 

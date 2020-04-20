@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MessageListItem from './message_list_item'
-import { fetchChannelMessages, fetchMessage, deleteMessageFromChannel } from '../../../actions/message_actions';
+import { fetchChannelMessages, fetchMessage, deleteMessageFromChannel, updateMessage } from '../../../actions/message_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)),
     fetchMessage: messageId => dispatch(fetchMessage(messageId)),
-    deleteMessage: (channelId, messageId) => dispatch(deleteMessageFromChannel(channelId, messageId))
+    deleteMessage: (messageId) => dispatch(deleteMessageFromChannel(messageId)),
+    updateMessage: (message) => dispatch(updateMessage(message))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageListItem);
