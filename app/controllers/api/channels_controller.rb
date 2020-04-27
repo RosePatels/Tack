@@ -15,6 +15,7 @@ class Api::ChannelsController < ApplicationController
             return render "api/channels/show"
          end
 
+
          render json: @channel.errors.full_messages, status: 422
 
         # if @channel.save && @channel_membership.save

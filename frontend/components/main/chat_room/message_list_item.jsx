@@ -78,7 +78,8 @@ class MessageListItem extends React.Component {
         return (
             <>
             <div className="avatar-img">{users[message.author_id].name[0]}</div>
-            <div><h5 className="message-author">{users[message.author_id].name} <span>{messageDateTime}</span></h5>
+            <div><h5 className="message-author">{users[message.author_id].name}</h5>
+                    {/* <span>{messageDateTime}</span> */}
                 {messageBody}
                 {authButtons}
             </div>

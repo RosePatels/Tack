@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_024225) do
+ActiveRecord::Schema.define(version: 2020_04_27_025407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 2020_04_19_024225) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_channels_on_author_id"
     t.index ["title"], name: "index_channels_on_title", unique: true
+  end
+
+  create_table "dm_memberships", force: :cascade do |t|
+    t.integer "dm_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dm_id"], name: "index_dm_memberships_on_dm_id"
+    t.index ["user_id"], name: "index_dm_memberships_on_user_id"
+  end
+
+  create_table "dms", force: :cascade do |t|
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_dms_on_author_id"
   end
 
   create_table "messages", force: :cascade do |t|
