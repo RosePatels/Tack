@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_CHANNEL, RECEIVE_CHANNELMEMBERSHIP, REMOVE_CHANNELMEMBERSHIP } from '../actions/channel_actions';
 import { RECEIVE_USERS } from '../actions/user_actions';
+import { RECEIVE_DM } from '../actions/dm_actions';
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -15,6 +16,8 @@ const usersReducer = (state = {}, action) => {
             return Object.assign({}, state, {[action.user.id]: action.user});
         case REMOVE_CHANNELMEMBERSHIP:
             return Object.assign({}, state, {[action.user.id]: action.user});
+        case RECEIVE_DM:
+            return Object.assign({}, state, { [action.user.id]: action.user, [action.other_user.id]: action.other_user })
         default:
             return state;
     }

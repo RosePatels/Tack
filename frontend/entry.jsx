@@ -6,6 +6,7 @@ import { createChannel, fetchChannel, updateChannel, deleteChannel, fetchChannel
 import { fetchUsers } from './actions/user_actions';
 import configureStore from './store/store';
 import { deleteMessageFromChannel, updateMessage } from './actions/message_actions';
+import { createDm } from './actions/dm_actions';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchChannels = fetchChannels;
     window.createChannelMembership = createChannelMembership;
     window.deleteChannelMembership = deleteChannelMembership;
+    window.createDm = createDm;
 
     ReactDOM.render(<Root store={store} />, root);
 });
