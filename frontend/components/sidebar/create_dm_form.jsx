@@ -10,7 +10,7 @@ class CreateDmForm extends React.Component {
 
 
     findDm(user1, user2) {
-        debugger;
+        
         for (let i = 0; i < user1.length; i++) {
             for (let j = 0; j < user2.length; j++) {
                 if (user1[i] === user2[j]) {
@@ -27,18 +27,18 @@ class CreateDmForm extends React.Component {
 
         let userLis = Object.values(users).map(user => {
             let directdm;
-            debugger;
+            
             let findDmId = this.findDm(user.dmIds, users[currentUserId].dmIds)
             if (findDmId) {
-                debugger;
+                
                 directdm = (
                     <Link to={`/client/dms/${findDmId}`} onClick={() => this.props.closeModal()} className="direct-dm-link">
                         <div>{user.name}</div>
                     </Link>
                 )
-                debugger;
+                
             } else {
-                debugger;
+                
                 directdm = (
                         <div onClick={() => {
                             let dm = { author_id: currentUserId };
@@ -46,7 +46,7 @@ class CreateDmForm extends React.Component {
                             this.props.closeModal();
                         }} className="direct-dm-div"><input type="submit" value={user.name}></input></div>
                 )
-                debugger;
+                
             }
 
             return <div key={user.id}>{directdm}</div>;

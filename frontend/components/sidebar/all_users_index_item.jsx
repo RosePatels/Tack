@@ -18,7 +18,7 @@ class AllUsersIndexItem extends React.Component {
     }
 
     findDm(user1, user2){
-        debugger;
+        
         for(let i = 0; i < user1.length; i++){
             for(let j = 0; j < user2.length; j++){
                 if(user1[i] === user2[j]){
@@ -51,7 +51,7 @@ class AllUsersIndexItem extends React.Component {
     }
 
     render(){
-        debugger;
+        
         return (
             <li className="browse-channel-link">
                {this.handleDmCheck()}
