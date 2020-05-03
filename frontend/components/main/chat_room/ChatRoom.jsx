@@ -9,13 +9,17 @@ class ChatRoom extends React.Component {
     }
 
     componentDidMount(){
-        let {channelId, authorId, fetchChannelMessages, fetchMessage } = this.props;
-        fetchChannelMessages(channelId);
-
+        let {channelId, authorId, fetchChannelMessages, fetchMessage, dmId, fetchDmMessages } = this.props;
+        if (channelId){
+            fetchChannelMessages(channelId);
+        } else if(dmId) {
+            fetchDmMessages(dmId);
+        }
         App.cable.subscriptions.create(
             { channel: "ChatChannel",
                 channel_id: channelId,
-                author_id: authorId
+                author_id: authorId,
+                dm_id: dmId
             },
             {
                 received: data => {
@@ -32,6 +36,9 @@ class ChatRoom extends React.Component {
     componentDidUpdate(prevProps){
         if(this.props.channelId !== prevProps.channelId){
             this.props.fetchChannelMessages(this.props.channelId);
+        }
+        if(this.props.dmId !== prevProps.dmId){
+            this.props.fetchDmMessages(this.props.dmId);
         }
         if(this.bottom.current){
             this.bottom.current.scrollIntoView();
@@ -58,7 +65,7 @@ class ChatRoom extends React.Component {
                     </ul>
                 </div>
                 {/* <div className="message-list">{messageList}</div> */}
-                <div><MessageFormContainer channelId={this.props.channelId} /></div>
+                <div><MessageFormContainer channelId={this.props.channelId} dmId={this.props.dmId}/></div>
             </div>
         )
     }

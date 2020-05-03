@@ -1,4 +1,11 @@
 
+export const fetchDms = () => {
+    return $.ajax({
+        url: '/api/dms',
+        method: 'GET'
+    })
+}
+
 export const createDm = (dm, member_id) => {
     
     return $.ajax({
@@ -7,3 +14,10 @@ export const createDm = (dm, member_id) => {
         data: { dm: dm, user_id: member_id }
     })
 };
+
+export const fetchDm = (dmId) => {
+    return $.ajax({
+        url: `/api/dms/${dmId}`,
+        method: 'GET'
+    })
+}

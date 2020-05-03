@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
         authorId: state.session.id,
         users: state.entities.users,
         messages: state.entities.messages,
-        message: ownProps.message
+        message: ownProps.message,
+        dmId: ownProps.dmId
     }
 };
 

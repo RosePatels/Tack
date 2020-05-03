@@ -1,5 +1,11 @@
 class Api::DmsController < ApplicationController
 
+    def index
+        @user = current_user
+        @dms = @user.dms
+        render "api/dms/index"
+    end
+
     def create
 
         @user = current_user
@@ -30,7 +36,8 @@ class Api::DmsController < ApplicationController
 
     def show
         @dm = Dm.find(params[:id])
-        @user = @dm.author
+        @user = @dm.members[0]
+        @other_user = @dm.members[1]
         render "api/dms/show"
     end
 

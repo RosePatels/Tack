@@ -2,8 +2,17 @@
 export const fetchChannelMessages = (channelId) => {
     // debugger;
     return $.ajax({
-        url: `/api/channels/${channelId}/messages`,
-        method: 'GET'
+        url: `/api/messages`,
+        method: 'GET',
+        data: { channel_id: channelId }
+    })
+}
+
+export const fetchDmMessages = (dmId) => {
+    return $.ajax({
+        url: `/api/messages`,
+        method: 'GET',
+        data: { dm_id: dmId }
     })
 }
 

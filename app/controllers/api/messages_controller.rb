@@ -1,7 +1,12 @@
 class Api::MessagesController < ApplicationController
 
     def index
-        @messages = Message.where(messageable_id: params["channel_id"]);
+        @messages = nil
+        if params["channel_id"]
+            @messages = Message.where(messageable_id: params["channel_id"], messageable_type: "Channel");
+        elsif params["dm_id"]
+            @messages = Message.where(messageable_id: params["dm_id"], messageable_type: "Dm");
+        end
         # debugger;
         render "api/messages/index"
     end

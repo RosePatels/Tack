@@ -15,4 +15,5 @@ class Dm < ApplicationRecord
         through: :dm_memberships,
         source: :user
 
+    has_many :messages, :as => :messageable
 end

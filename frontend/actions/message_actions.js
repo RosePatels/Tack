@@ -3,7 +3,7 @@ import * as MessageApiUtil from '../util/message_api_util';
 export const RECEIVE_CHANNEL_MESSAGES = "RECEIVE_CHANNEL_MESSAGES";
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
 export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
-
+export const RECEIVE_DM_MESSAGES = "RECEIVE_DM_MESSAGES";
 
 const receiveChannelMessages = messages => {
     // debugger;
@@ -11,6 +11,14 @@ const receiveChannelMessages = messages => {
     type: RECEIVE_CHANNEL_MESSAGES,
     messages
 }}
+
+const receiveDmMessages = messages => {
+    return {
+        type: RECEIVE_DM_MESSAGES,
+        messages
+    }
+}
+
 
 const receiveMessage = message => {
     return {
@@ -30,6 +38,12 @@ export const fetchChannelMessages = (channelId) => dispatch => {
     return MessageApiUtil.fetchChannelMessages(channelId).then(messages => {
         // debugger;
         dispatch(receiveChannelMessages(messages))
+    });
+}
+
+export const fetchDmMessages = (dmId) => dispatch => {
+    return MessageApiUtil.fetchDmMessages(dmId).then(messages => {
+        dispatch(receiveDmMessages(messages))
     });
 }
 
