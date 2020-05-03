@@ -32,8 +32,8 @@ class CreateDmForm extends React.Component {
             if (findDmId) {
                 debugger;
                 directdm = (
-                    <Link to={`/client/dms/${findDmId}`} onClick={() => this.props.closeModal()}>
-                        <p>{user.name}</p>
+                    <Link to={`/client/dms/${findDmId}`} onClick={() => this.props.closeModal()} className="direct-dm-link">
+                        <div>{user.name}</div>
                     </Link>
                 )
                 debugger;
@@ -44,7 +44,7 @@ class CreateDmForm extends React.Component {
                             let dm = { author_id: currentUserId };
                             this.props.createDm(dm, user.id);
                             this.props.closeModal();
-                        }}><input type="submit" value={user.name}></input></div>
+                        }} className="direct-dm-div"><input type="submit" value={user.name}></input></div>
                 )
                 debugger;
             }
@@ -59,7 +59,7 @@ class CreateDmForm extends React.Component {
                     <button onClick={this.props.closeModal}>X</button>
                     <h3>Direct Messages</h3>
                 </div>
-                {userLis}
+                <div className="user-lis-container">{userLis}</div>
             </div>
         );
     }

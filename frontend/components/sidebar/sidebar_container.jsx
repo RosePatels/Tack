@@ -24,9 +24,9 @@ const mapDispatchToProps = dispatch => ({
         }}>Channels</h3>
     ),
     createDm: (
-        <h3 className="channels-header" onClick={() => {
+        <h3 className="channels-header direct-messages-header" onClick={() => {
             dispatch(openModal('Dm'))
-        }}>Direct Messages</h3>
+        }}><i className="fas fa-plus plus-icon"></i>Direct Messages</h3>
     )
 });
 
