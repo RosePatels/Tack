@@ -8,6 +8,7 @@ import RemoveMembersFormContainer from '../channel_form/remove_members_form_cont
 import RemoveChannelFormContainer from '../channel_form/remove_channel_form_container';
 import MemberListContainer from '../main/member_list_container';
 import AllChannelFormContainer from '../sidebar/all_channel_form_container';
+import CreateDmFormContainer from '../sidebar/create_dm_form_container';
 import { withRouter } from 'react-router-dom';
 
 function Modal({modal, closeModal}){
@@ -37,6 +38,9 @@ function Modal({modal, closeModal}){
             break;
         case 'All Channels':
             component = <AllChannelFormContainer />
+            break;
+        case 'Dm':
+            component = <CreateDmFormContainer />
             break;
         default:
             return null;

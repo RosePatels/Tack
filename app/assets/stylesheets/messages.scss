@@ -13,7 +13,7 @@
     padding: 10px 20px 10px 10px;
     display: flex;
     overflow-wrap: break-word;
-
+    position: relative;
 }
 
 .avatar-img {
@@ -74,4 +74,62 @@
     border: 1px solid #3F0E40;
     outline: none;
     transition: .1s;
+}
+
+.message-content {
+    position: relative;
+}
+
+.individual-message:hover {
+    background: rgb(245, 245, 245);
+}
+
+.individual-message:hover .auth-buttons{
+    display: block;
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 8px;
+    right: 4px;
+    display: none;
+}
+
+.auth-buttons i {
+    color: rgb(92, 89, 89);
+}
+
+.auth-buttons button {
+    margin-right: 5px;
+    padding: 5px;
+    background: white;
+    border: 1px solid rgb(221, 220, 220);
+    border-radius: 3px;
+}
+
+.message-body-edit {
+    display: flex;
+    align-items: center;
+}
+
+.message-body-edit input{
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+    border: 1px solid rgb(221, 220, 220);
+}
+
+.message-body-edit input:focus {
+    outline: none;
+    border: 1px solid #3F0E40;
+}
+
+.message-body-save {
+    padding: 4px 6px;
+    margin-top: 5px;
+    background: #3F0E40;
+    color: rgba(255, 255, 255, 0.871);
+    border: 1px solid #3F0E40;
+    border-radius: 3px;
 }

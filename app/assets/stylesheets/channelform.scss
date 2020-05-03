@@ -65,3 +65,32 @@
     background: #eceaea;
     transition: .2s;
 }
+
+.user-lis-container {
+    max-height: 400px;
+    overflow: auto;
+    padding: 10px 5px;
+}
+
+.direct-dm-link {
+    text-decoration: none;
+    color: black;
+    div {
+        padding: 8px 5px;
+    }
+}
+
+.direct-dm-link:hover div,
+.direct-dm-div:hover{
+    background: rgb(245, 244, 244);
+}
+
+.direct-dm-div {
+    input {
+        background: none;
+        font-size: 16px;
+        border: none;
+        padding: 8px 5px;
+        font-family: 'Lato', sans-serif;
+    }
+}

@@ -1,5 +1,5 @@
 class Channel < ApplicationRecord
-    validates :author_id, :description, :title, presence: true
+    validates :author_id, :title, presence: true
     validates :private, inclusion: { in: [true, false] }
     before_validation :set_defaults
 

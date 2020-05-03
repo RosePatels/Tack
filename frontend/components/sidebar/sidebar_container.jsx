@@ -22,6 +22,11 @@ const mapDispatchToProps = dispatch => ({
         <h3 className="channels-header" onClick={() => {
             dispatch(openModal('All Channels'))
         }}>Channels</h3>
+    ),
+    createDm: (
+        <h3 className="channels-header direct-messages-header" onClick={() => {
+            dispatch(openModal('Dm'))
+        }}><i className="fas fa-plus plus-icon"></i>Direct Messages</h3>
     )
 });
 

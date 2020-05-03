@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import ChatRoom from './ChatRoom';
-import { fetchChannelMessages, fetchMessage, deleteMessageFromChannel, fetchDmMessages } from '../../../actions/message_actions';
+import MessageListItem from './message_list_item'
+import { fetchChannelMessages, fetchMessage, deleteMessageFromChannel, updateMessage } from '../../../actions/message_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -8,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
         authorId: state.session.id,
         users: state.entities.users,
         messages: state.entities.messages,
+        message: ownProps.message,
         dmId: ownProps.dmId
     }
 };
@@ -15,8 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)),
     fetchMessage: messageId => dispatch(fetchMessage(messageId)),
-    deleteMessage: (channelId, messageId) => dispatch(deleteMessageFromChannel(channelId, messageId)),
-    fetchDmMessages: dmId => dispatch(fetchDmMessages(dmId))
+    deleteMessage: (messageId) => dispatch(deleteMessageFromChannel(messageId)),
+    updateMessage: (message) => dispatch(updateMessage(message))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatRoom);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageListItem);

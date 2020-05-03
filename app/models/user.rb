@@ -50,4 +50,18 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :author_id,
         class_name: 'Message'
+
+    has_many :authored_dms,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: 'Dm'
+
+    has_many :dm_memberships,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: 'DmMembership'
+
+    has_many :dms,
+        through: :dm_memberships,
+        source: :dm
 end

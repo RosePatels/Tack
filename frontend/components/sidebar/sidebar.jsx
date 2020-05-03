@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ChannelIndexContainer from './channel_index_container';
-
+import DmIndexContainer from './dm_index_container';
+import DmIndex from './dm_index';
 
 class Sidebar extends React.Component {
     constructor(props){
@@ -68,6 +69,10 @@ class Sidebar extends React.Component {
                     <div className="channel-modal">
                         {/* {<Modal />} */}
                         {this.props.otherForm}
+                    </div>
+                    <div>
+                        {this.props.createDm}
+                        <DmIndexContainer />
                     </div>
                 </div>
             </div>
