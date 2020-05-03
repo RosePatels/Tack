@@ -61,9 +61,9 @@ class MessageListItem extends React.Component {
 
         let messageBody;
         if (this.state.edit) {
-            messageBody = <form onSubmit={this.handleSubmit}>
+            messageBody = <form onSubmit={this.handleSubmit} className="message-body-edit">
                 <input type="text" value={this.state.body} onChange={this.update("body")} />
-                <button>Save</button>
+                <button className="message-body-save">Save</button>
             </form>
         } 
         else {

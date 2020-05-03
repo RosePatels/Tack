@@ -108,3 +108,19 @@
     font-size: 14px;
     padding-right: 7px;
 }
+
+.dm-navbar {
+    padding: 20px 15px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(231, 230, 230);
+}
+
+.dm-navbar h2 {
+    font-weight: 900;
+    font-size: 18px;
+    color: #3a3a3a;
+    margin-left: 5px;
+}

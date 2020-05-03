@@ -106,3 +106,30 @@
     border: 1px solid rgb(221, 220, 220);
     border-radius: 3px;
 }
+
+.message-body-edit {
+    display: flex;
+    align-items: center;
+}
+
+.message-body-edit input{
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+    border: 1px solid rgb(221, 220, 220);
+}
+
+.message-body-edit input:focus {
+    outline: none;
+    border: 1px solid #3F0E40;
+}
+
+.message-body-save {
+    padding: 4px 6px;
+    margin-top: 5px;
+    background: #3F0E40;
+    color: rgba(255, 255, 255, 0.871);
+    border: 1px solid #3F0E40;
+    border-radius: 3px;
+}

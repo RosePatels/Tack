@@ -5,7 +5,9 @@ class DmNavbar extends React.Component {
     render(){
         const { userName } = this.props;
         return (
-            <h2>{userName}</h2>
+           <nav className = "dm-navbar">
+                <h2>{userName}</h2>
+           </nav>
         )
     }
 }
