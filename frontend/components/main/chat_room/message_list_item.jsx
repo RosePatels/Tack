@@ -74,8 +74,8 @@ class MessageListItem extends React.Component {
 
         if (authorId === message.author_id) {
             authButtons = <div className="auth-buttons">
-                <button onClick={this.handleEdit}>Edit</button>
-                <button onClick={() => { this.props.deleteMessage(message.id) }}>Delete</button>
+                <button onClick={this.handleEdit}><i className="fas fa-edit"></i></button>
+                <button onClick={() => { this.props.deleteMessage(message.id) }}><i className="fas fa-trash-alt"></i></button>
             </div>
         }
 
