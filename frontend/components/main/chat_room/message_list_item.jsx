@@ -31,6 +31,11 @@ class MessageListItem extends React.Component {
         this.setState({ edit: true })
     }
 
+    componentDidUpdate(prevProps){
+        if(this.props.message !== prevProps.message){
+            this.setState({ body: this.props.message.body })
+        }
+    }
 
     render() {
 

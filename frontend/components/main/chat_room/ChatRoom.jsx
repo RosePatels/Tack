@@ -12,8 +12,10 @@ class ChatRoom extends React.Component {
         let {channelId, authorId, fetchChannelMessages, fetchMessage, dmId, fetchDmMessages } = this.props;
         if (channelId){
             fetchChannelMessages(channelId);
+
         } else if(dmId) {
             fetchDmMessages(dmId);
+
         }
         App.cable.subscriptions.create(
             { channel: "ChatChannel",
@@ -36,9 +38,10 @@ class ChatRoom extends React.Component {
     componentDidUpdate(prevProps){
         if(this.props.channelId !== prevProps.channelId){
             this.props.fetchChannelMessages(this.props.channelId);
-        }
-        if(this.props.dmId !== prevProps.dmId){
+
+        } else if(this.props.dmId !== prevProps.dmId){
             this.props.fetchDmMessages(this.props.dmId);
+
         }
         if(this.bottom.current){
             this.bottom.current.scrollIntoView();
@@ -48,6 +51,7 @@ class ChatRoom extends React.Component {
     render(){
         const { messages } = this.props;
         const pastMessagesList = Object.values(messages).map((message, i) => {
+
             return (<li key={i} className="individual-message" >
                 <MessageListItemContainer message={message}/>
                 <div ref={this.bottom} />
@@ -55,13 +59,11 @@ class ChatRoom extends React.Component {
         });
         
 
-
         return (
             <div className="chatroom-container">
                 <div className="message-list-container">
                     <ul className="message-list">
-                        {pastMessagesList}
-                    
+                        {pastMessagesList} 
                     </ul>
                 </div>
                 {/* <div className="message-list">{messageList}</div> */}

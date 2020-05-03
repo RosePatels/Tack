@@ -42,7 +42,7 @@ class Api::DmsController < ApplicationController
     end
 
     def dm_params
-        params.require(:dm).permit(:author_id)
+        params.require(:dm).permit(:author_id, :user_id)
     end
 
 end

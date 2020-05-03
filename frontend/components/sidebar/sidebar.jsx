@@ -71,6 +71,7 @@ class Sidebar extends React.Component {
                         {this.props.otherForm}
                     </div>
                     <div>
+                        {this.props.createDm}
                         <DmIndexContainer />
                     </div>
                 </div>

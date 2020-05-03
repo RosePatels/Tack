@@ -43,7 +43,7 @@ export const fetchChannelMessages = (channelId) => dispatch => {
 
 export const fetchDmMessages = (dmId) => dispatch => {
     return MessageApiUtil.fetchDmMessages(dmId).then(messages => {
-        dispatch(receiveDmMessages(messages))
+        dispatch(receiveChannelMessages(messages))
     });
 }
 
