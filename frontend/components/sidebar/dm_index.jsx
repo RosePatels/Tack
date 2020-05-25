@@ -14,12 +14,20 @@ class DmIndex extends React.Component {
             return null;
         }
 
+        let dmIds = users[currentUserId].dmIds;
+        if (!dmIds) {
+            return null;
+        }
         let dmLis = Object.values(dms).map(dm => {
             let memberOne = dm.memberIds[0];
             let memberTwo = dm.memberIds[1];
-            let userName = users[memberTwo].name;
+            let userName;
             if (memberOne !== currentUserId && users[memberOne]){
                 userName = users[memberOne].name
+            } else if (memberTwo !== currentUserId && users[memberTwo]) {
+                userName = users[memberTwo].name;
+            } else {
+                userName = users[currentUserId].name;
             }
             return <DmIndexItem key={dm.id} dm={dm} userName={userName} />
         });

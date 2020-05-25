@@ -12,9 +12,13 @@ class DmDetail extends React.Component {
         if (!dm) return null;
         let memberOne = dm.memberIds[0];
         let memberTwo = dm.memberIds[1];
-        let userName = users[memberTwo].name;
+        let userName;
         if (memberOne !== currentUserId && users[memberOne]) {
-            userName = users[memberOne].name
+            userName = users[memberOne].name;
+        } else if (memberTwo !== currentUserId && users[memberTwo]) {
+            userName = users[memberTwo].name;
+        } else {
+            userName = users[currentUserId].name;
         }
         return (
             <div>

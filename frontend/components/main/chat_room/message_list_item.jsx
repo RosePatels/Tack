@@ -58,7 +58,6 @@ class MessageListItem extends React.Component {
         let date = timeStamp[0].split("-");
         let month = months[date[1].toString()];
         let messageDateTime = `${month} ${date[2]}`;
-
         let messageBody;
         if (this.state.edit) {
             messageBody = <form onSubmit={this.handleSubmit} className="message-body-edit">
